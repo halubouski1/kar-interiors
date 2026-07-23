@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+      <link rel="stylesheet" href="css/normalize.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/media.css">
+      <script>document.documentElement.style.setProperty("--fixed-vh", window.innerHeight + "px");</script>
+      <title>KAR Interiors</title>
+</head>
+<body>
+
+<header class="header">
+  <button class="header__burger" type="button" aria-label="Open menu">
+    <img src="assets/icons/burger-menu.svg" alt="" aria-hidden="true">
+  </button>
+
+  <nav class="header__nav" aria-label="Primary">
+    <a class="header__link" href="#home">Home</a>
+    <a class="header__link" href="#about">About Us</a>
+    <a class="header__link" href="#services">Services</a>
+    <a class="header__link" href="#projects">Projects</a>
+    <a class="header__link" href="#contact">Contact Us</a>
+  </nav>
+
+  <a class="header__request" href="#contact">
+    Leave a request
+    <img src="assets/icons/btn-arrow.svg" alt="" aria-hidden="true">
+  </a>
+</header>
+
+<section class="hero" id="home">
+  <video class="hero__bg" autoplay muted loop playsinline preload="auto">
+    <source src="assets/vid/hero.mp4" type="video/mp4">
+  </video>
+  <span class="hero__blur" aria-hidden="true"></span>
+
+  <img class="hero__logo" src="assets/icons/logo.svg" alt="KAR Interiors">
+
+  <div class="hero__socials">
+    <a class="hero__social" href="#" aria-label="Facebook">
+      <img src="assets/icons/fb.svg" alt="" aria-hidden="true">
+    </a>
+    <a class="hero__social" href="#" aria-label="WhatsApp">
+      <img src="assets/icons/whatsapp.svg" alt="" aria-hidden="true">
+    </a>
+    <a class="hero__social" href="#" aria-label="Instagram">
+      <img src="assets/icons/ig.svg" alt="" aria-hidden="true">
+    </a>
+  </div>
+
+  <div class="hero__bottom">
+    <div class="hero__intro">
+      <h1 class="hero__title">We design interiors that reflect your personality</h1>
+      <p class="hero__text">Comprehensive project management: from the initial concept
+        to the completion of the renovation. We create thoughtfully
+        designed interiors in Vienna and throughout Europe</p>
+    </div>
+
+    <button class="hero__scroll" type="button" aria-label="Scroll to next section">
+      <img src="assets/icons/scroll-down.svg" alt="" aria-hidden="true">
+    </button>
+  </div>
+</section>
+
+<section class="approach" id="about">
+  <h2 class="approach__title">A comprehensive approach to interior design and architectural solutions</h2>
+
+  <div class="approach__discover">
+    <a class="approach__link" href="#services">
+      <span>Discover more</span>
+      <img src="assets/icons/discover.svg" alt="" aria-hidden="true">
+    </a>
+    <div class="approach__line-wrapper">
+        <span class="approach__line" aria-hidden="true"></span>
+        <span class="approach__bar" aria-hidden="true"></span>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <a class="service-card" href="#">
+    <span class="service-card__title">Architectural design</span>
+    <span class="service-card__discover">
+      <span>Discover more</span>
+      <img src="assets/icons/discover.svg" alt="" aria-hidden="true">
+    </span>
+  </a>
+
+  <a class="service-card" href="#">
+    <span class="service-card__title">Interior design</span>
+    <span class="service-card__discover">
+      <span>Discover more</span>
+      <img src="assets/icons/discover.svg" alt="" aria-hidden="true">
+    </span>
+  </a>
+
+  <a class="service-card" href="#">
+    <span class="service-card__title">Project supervision</span>
+    <span class="service-card__discover">
+      <span>Discover more</span>
+      <img src="assets/icons/discover.svg" alt="" aria-hidden="true">
+    </span>
+  </a>
+
+  <a class="service-card" href="#">
+    <span class="service-card__title">Furnishing and finishing</span>
+    <span class="service-card__discover">
+      <span>Discover more</span>
+      <img src="assets/icons/discover.svg" alt="" aria-hidden="true">
+    </span>
+  </a>
+</section>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
