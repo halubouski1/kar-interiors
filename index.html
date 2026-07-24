@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ren">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
       <link rel="stylesheet" href="css/normalize.css">
       <link rel="stylesheet" href="css/style.css">
       <link rel="stylesheet" href="css/media.css">
@@ -66,15 +67,15 @@
   </div>
 </section>
 
-<section class="approach" id="about">
-  <h2 class="approach__title">A comprehensive approach to interior design and architectural solutions</h2>
+<section class="approach" id="approach">
+  <h2 class="approach__title" data-aos="fade-up">A comprehensive approach to interior design and architectural solutions</h2>
 
   <div class="approach__discover">
-    <a class="approach__link" href="#services">
+    <a class="approach__link" href="#services" data-aos="fade-up">
       <span>Discover more</span>
       <img src="assets/icons/discover.svg" alt="" aria-hidden="true">
     </a>
-    <div class="approach__line-wrapper">
+    <div class="approach__line-wrapper" data-aos="approach-line" data-aos-duration="1700" data-aos-easing="ease-out">
         <span class="approach__line" aria-hidden="true"></span>
         <span class="approach__bar" aria-hidden="true"></span>
     </div>
@@ -82,7 +83,7 @@
 </section>
 
 <section class="services" id="services">
-  <a class="service-card" href="#">
+  <a class="service-card" href="#" data-aos="fade-up" data-aos-delay="0">
     <span class="service-card__title">Architectural design</span>
     <span class="service-card__discover">
       <span>Discover more</span>
@@ -90,7 +91,7 @@
     </span>
   </a>
 
-  <a class="service-card" href="#">
+  <a class="service-card" href="#" data-aos="fade-up" data-aos-delay="100">
     <span class="service-card__title">Interior design</span>
     <span class="service-card__discover">
       <span>Discover more</span>
@@ -98,7 +99,7 @@
     </span>
   </a>
 
-  <a class="service-card" href="#">
+  <a class="service-card" href="#" data-aos="fade-up" data-aos-delay="200">
     <span class="service-card__title">Project supervision</span>
     <span class="service-card__discover">
       <span>Discover more</span>
@@ -106,7 +107,7 @@
     </span>
   </a>
 
-  <a class="service-card" href="#">
+  <a class="service-card" href="#" data-aos="fade-up" data-aos-delay="300">
     <span class="service-card__title">Furnishing and finishing</span>
     <span class="service-card__discover">
       <span>Discover more</span>
@@ -115,11 +116,566 @@
   </a>
 </section>
 
+<section class="about" id="about">
+  <div class="about__profile" data-aos="fade-up">
+    <span class="about__meta">Name Surname</span>
+    <div class="about-wrapper">
+        <h2 class="about__title">About us</h2>
+        <img class="about__photo" src="assets/img/about-us-card.jpg" alt="Anna, founder of Kar-Interiors">
+          <p class="about__text">My name is Anna, and I’m the founder of Kar-Interiors. For over 8 years,
+            we’ve been creating interiors that reflect the personalities of their owners.
+            Our philosophy is that every decision is carefully considered with the
+            client’s budget and feasibility in mind. We work in Vienna and throughout
+            Europe, helping clients turn their ideas into real spaces.
+        </p>
+        <a class="header__request about__btn" href="#">
+            Leave a request
+            <img src="assets/icons/btn-arrow.svg" alt="" aria-hidden="true">
+        </a>
+    </div>
+    <span class="about__meta">Founder of Kar-Interiors</span>
+  </div>
+
+  <div class="about__features" data-aos="fade-up">
+    <div class="about__feature" >
+      <span class="about__feature-line" aria-hidden="true"></span>
+      <span class="about__feature-text">A personalized<br>approach</span>
+    </div>
+    <div class="about__feature">
+      <span class="about__feature-line" aria-hidden="true"></span>
+      <span class="about__feature-text">Attention to<br>detail</span>
+    </div>
+    <div class="about__feature">
+      <span class="about__feature-line" aria-hidden="true"></span>
+      <span class="about__feature-text">Saving the<br>client time</span>
+    </div>
+    <div class="about__feature">
+      <span class="about__feature-line" aria-hidden="true"></span>
+      <span class="about__feature-text">Timeless<br>interiors</span>
+    </div>
+  </div>
+</section>
+
+<section class="create" id="create">
+  <video class="create__bg" autoplay muted loop playsinline preload="auto">
+    <source src="assets/vid/create.mp4" type="video/mp4">
+  </video>
+
+  <div class="create__top">
+    <p class="create__text" data-aos="fade-up">We create timeless interiors that bring joy to their owners for many years</p>
+
+    <div class="create__actions">
+      <a class="header__request about__btn" href="#contact">
+        Leave a request
+        <img src="assets/icons/btn-arrow.svg" alt="" aria-hidden="true">
+      </a>
+      <a class="create__btn" href="#about">
+        Learn more
+        <img src="assets/icons/btn-arrow.svg" alt="" aria-hidden="true">
+      </a>
+    </div>
+  </div>
+
+  <div class="create__stats">
+    <div class="create__stat">
+      <span class="create__num">8</span>
+      <span class="create__label">years of<br>experience</span>
+    </div>
+    <div class="create__stat">
+      <span class="create__num" data-start="10000">18&thinsp;000</span>
+      <span class="create__label">m²<br>designed</span>
+    </div>
+    <div class="create__stat">
+      <span class="create__num" data-start="100">120</span>
+      <span class="create__label">completed<br>projects</span>
+    </div>
+  </div>
+</section>
+
+<section class="how" id="how">
+  <div class="how__head" data-aos="fade-up">
+    <h2 class="how__title">How do we work</h2>
+    <span class="how__subtitle">A transparent process from concept to finished interior</span>
+  </div>
+
+  <div class="how__list">
+    <a class="how__item" href="#" data-aos="fade-up" data-aos-delay="0">
+      <div class="how__left">
+        <span class="how__num">/01</span>
+        <span class="how__name">Briefing</span>
+      </div>
+      <p class="how__text">we discuss your preferences, <br> budget, style, and objectives. We <br> conduct an analysis of the property</p>
+    </a>
+
+    <a class="how__item" href="#" data-aos="fade-up" data-aos-delay="100">
+      <div class="how__left">
+        <span class="how__num">/02</span>
+        <span class="how__name">Concept</span>
+      </div>
+      <p class="how__text">we develop an ergonomic layout and create an interior design concept</p>
+    </a>
+
+    <a class="how__item" href="#" data-aos="fade-up" data-aos-delay="200">
+      <div class="how__left">
+        <span class="how__num">/03</span>
+        <span class="how__name">Design</span>
+      </div>
+      <p class="how__text">we create 3D renderings and prepare working drawings for the builders</p>
+    </a>
+
+    <a class="how__item" href="#" data-aos="fade-up" data-aos-delay="300">
+      <div class="how__left">
+        <span class="how__num">/04</span>
+        <span class="how__name">Material Selection</span>
+      </div>
+      <p class="how__text">We select finishing materials, furniture, lighting, plumbing fixtures, and decor</p>
+    </a>
+
+    <a class="how__item" href="#" data-aos="fade-up" data-aos-delay="400">
+      <div class="how__left">
+        <span class="how__num">/05</span>
+        <span class="how__name">Implementation</span>
+      </div>
+      <p class="how__text">We oversee construction, communicate with contractors, and verify compliance with the project</p>
+    </a>
+
+    <a class="how__item" href="#" data-aos="fade-up" data-aos-delay="500">
+      <div class="how__left">
+        <span class="how__num">/06</span>
+        <span class="how__name">The Result</span>
+      </div>
+      <p class="how__text">You receive a finished interior that brings you joy every day</p>
+    </a>
+  </div>
+</section>
+
+<div class="how-cursor" aria-hidden="true">
+  <div class="how-cursor__inner">
+    <img src="assets/icons/learn-more.svg" alt="">
+    <span>Learn More</span>
+  </div>
+</div>
+
+<section class="portfolio" id="projects">
+  <div class="swiper portfolio__swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide portfolio__slide">
+        <img class="portfolio__img" src="assets/img/portfolio-card-1.png" alt="Case Nameee">
+        <div class="portfolio__caption" >
+          <div class="portfolio__info">
+            <h3 class="portfolio__name">Case<br>Nameee</h3>
+            <span class="portfolio__desc">Interior update for the<br>country’s main park</span>
+          </div>
+          <a class="header__request about__btn" href="#">
+            Watch the case
+            <img src="assets/icons/btn-arrow.svg" alt="" aria-hidden="true">
+          </a>
+        </div>
+      </div>
+
+      <div class="swiper-slide portfolio__slide">
+        <img class="portfolio__img" src="assets/img/portfolio-card-1.png" alt="Seaside Villa">
+        <div class="portfolio__caption" >
+          <div class="portfolio__info">
+            <h3 class="portfolio__name">Seaside<br>Villa</h3>
+            <span class="portfolio__desc">Full redesign of a family<br>residence by the coast</span>
+          </div>
+          <a class="header__request about__btn" href="#">
+            Watch the case
+            <img src="assets/icons/btn-arrow.svg" alt="" aria-hidden="true">
+          </a>
+        </div>
+      </div>
+
+      <div class="swiper-slide portfolio__slide">
+        <img class="portfolio__img" src="assets/img/portfolio-card-1.png" alt="Urban Apartment">
+        <div class="portfolio__caption" >
+          <div class="portfolio__info">
+            <h3 class="portfolio__name">Urban<br>Apartment</h3>
+            <span class="portfolio__desc">Minimalist renovation in<br>the heart of the city</span>
+          </div>
+          <a class="header__request about__btn" href="#">
+            Watch the case
+            <img src="assets/icons/btn-arrow.svg" alt="" aria-hidden="true">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2 data-aos="fade-up" class="portfolio__label">//Portfolio</h2>
+
+  <button class="portfolio__arrow portfolio__prev" type="button" aria-label="Previous case">
+    <img src="assets/icons/slider-arrow.svg" alt="" aria-hidden="true">
+  </button>
+  <button class="portfolio__arrow portfolio__next" type="button" aria-label="Next case">
+    <img src="assets/icons/slider-arrow.svg" alt="" aria-hidden="true">
+  </button>
+</section>
+
+<section class="reviews" id="reviews" data-aos="fade-up">
+  <div class="reviews__head">
+    <h2 class="reviews__title">Reviews</h2>
+    <div class="reviews__nav">
+      <button class="reviews__arrow reviews__prev" type="button" aria-label="Previous review">
+        <img src="assets/icons/slider-arrow.svg" alt="" aria-hidden="true">
+      </button>
+      <button class="reviews__arrow reviews__next" type="button" aria-label="Next review">
+        <img src="assets/icons/slider-arrow.svg" alt="" aria-hidden="true">
+      </button>
+    </div>
+  </div>
+
+  <div class="swiper reviews__swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide review-card">
+        <div class="review__top">
+          <div class="review__author">
+            <img class="review__avatar" src="assets/img/reviews-avatar-1.png" alt="Max T.">
+            <div class="review__author-info">
+              <div class="review__name-row">
+                <span class="review__name">Max T.</span>
+                <img class="review__verify" src="assets/icons/verify-review.svg" alt="" aria-hidden="true">
+              </div>
+              <span class="review__service">House Interior Design</span>
+            </div>
+          </div>
+          <div class="review__stars">
+            <img src="assets/icons/review-star.svg" alt="" aria-hidden="true">
+            <img src="assets/icons/review-star.svg" alt="" aria-hidden="true">
+            <img src="assets/icons/review-star.svg" alt="" aria-hidden="true">
+            <img src="assets/icons/review-star.svg" alt="" aria-hidden="true">
+            <img src="assets/icons/review-star.svg" alt="" aria-hidden="true">
+          </div>
+        </div>
+        <div class="review__body">
+          <p class="review__text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+          <p class="review__text">The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+        </div>
+      </div>
+
+      <div class="swiper-slide review-card">
+        <div class="review__top">
+          <div class="review__author">
+            <img class="review__avatar" src="assets/img/reviews-avatar-1.png" alt="Max T.">
+            <div class="review__author-info">
+              <div class="review__name-row">
+                <span class="review__name">Max T.</span>
+                <img class="review__verify" src="assets/icons/verify-review.svg" alt="" aria-hidden="true">
+              </div>
+              <span class="review__service">House Interior Design</span>
+            </div>
+          </div>
+          <div class="review__stars">
+            <img src="assets/icons/review-star.svg" alt="" aria-hidden="true">
+            <img src="assets/icons/review-star.svg" alt="" aria-hidden="true">
+            <img src="assets/icons/review-star.svg" alt="" aria-hidden="true">
+            <img src="assets/icons/review-star.svg" alt="" aria-hidden="true">
+            <img src="assets/icons/review-star.svg" alt="" aria-hidden="true">
+          </div>
+        </div>
+        <div class="review__body">
+          <p class="review__text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+          <p class="review__text">The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+        </div>
+      </div>
+
+      <div class="swiper-slide review-card">
+        <div class="review__top">
+          <div class="review__author">
+            <img class="review__avatar" src="assets/img/reviews-avatar-1.png" alt="Max T.">
+            <div class="review__author-info">
+              <div class="review__name-row">
+                <span class="review__name">Max T.</span>
+                <img class="review__verify" src="assets/icons/verify-review.svg" alt="" aria-hidden="true">
+              </div>
+              <span class="review__service">House Interior Design</span>
+            </div>
+          </div>
+          <div class="review__stars">
+            <img src="assets/icons/review-star.svg" alt="" aria-hidden="true">
+            <img src="assets/icons/review-star.svg" alt="" aria-hidden="true">
+            <img src="assets/icons/review-star.svg" alt="" aria-hidden="true">
+            <img src="assets/icons/review-star.svg" alt="" aria-hidden="true">
+            <img src="assets/icons/review-star.svg" alt="" aria-hidden="true">
+          </div>
+        </div>
+        <div class="review__body">
+          <p class="review__text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+          <p class="review__text">The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+        </div>
+      </div>
+
+      <div class="swiper-slide review-card">
+        <div class="review__top">
+          <div class="review__author">
+            <img class="review__avatar" src="assets/img/reviews-avatar-1.png" alt="Max T.">
+            <div class="review__author-info">
+              <div class="review__name-row">
+                <span class="review__name">Max T.</span>
+                <img class="review__verify" src="assets/icons/verify-review.svg" alt="" aria-hidden="true">
+              </div>
+              <span class="review__service">House Interior Design</span>
+            </div>
+          </div>
+          <div class="review__stars">
+            <img src="assets/icons/review-star.svg" alt="" aria-hidden="true">
+            <img src="assets/icons/review-star.svg" alt="" aria-hidden="true">
+            <img src="assets/icons/review-star.svg" alt="" aria-hidden="true">
+            <img src="assets/icons/review-star.svg" alt="" aria-hidden="true">
+            <img src="assets/icons/review-star.svg" alt="" aria-hidden="true">
+          </div>
+        </div>
+        <div class="review__body">
+          <p class="review__text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+          <p class="review__text">The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+        </div>
+      </div>
+
+      <div class="swiper-slide review-card">
+        <div class="review__top">
+          <div class="review__author">
+            <img class="review__avatar" src="assets/img/reviews-avatar-1.png" alt="Max T.">
+            <div class="review__author-info">
+              <div class="review__name-row">
+                <span class="review__name">Max T.</span>
+                <img class="review__verify" src="assets/icons/verify-review.svg" alt="" aria-hidden="true">
+              </div>
+              <span class="review__service">House Interior Design</span>
+            </div>
+          </div>
+          <div class="review__stars">
+            <img src="assets/icons/review-star.svg" alt="" aria-hidden="true">
+            <img src="assets/icons/review-star.svg" alt="" aria-hidden="true">
+            <img src="assets/icons/review-star.svg" alt="" aria-hidden="true">
+            <img src="assets/icons/review-star.svg" alt="" aria-hidden="true">
+            <img src="assets/icons/review-star.svg" alt="" aria-hidden="true">
+          </div>
+        </div>
+        <div class="review__body">
+          <p class="review__text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+          <p class="review__text">The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="faq__head" data-aos="fade-up">
+    <h2 class="faq__title">FAQ</h2>
+    <span class="faq__subtitle">Answers to Key Questions About Collaboration</span>
+  </div>
+
+  <div class="faq__list">
+    <div class="faq__item" data-aos="fade-up" data-aos-delay="0">
+      <button class="faq__trigger" type="button" aria-expanded="false">
+        <span class="faq__q">How much does a design project cost?</span>
+        <img class="faq__arrow" src="assets/icons/faq-arrow.svg" alt="" aria-hidden="true">
+      </button>
+      <div class="faq__answer">
+        <div class="faq__answer-inner">
+          <p class="faq__a">The cost depends on the scope, area, and level of finishing. After the first
+            meeting and a brief, we prepare a detailed estimate tailored to your budget.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq__item" data-aos="fade-up" data-aos-delay="100">
+      <button class="faq__trigger" type="button" aria-expanded="false">
+        <span class="faq__q">How long does it take to complete a project?</span>
+        <img class="faq__arrow" src="assets/icons/faq-arrow.svg" alt="" aria-hidden="true">
+      </button>
+      <div class="faq__answer">
+        <div class="faq__answer-inner">
+          <p class="faq__a">On average a full project takes from 6 to 12 months, depending on the size
+            of the space and the complexity of the work.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq__item" data-aos="fade-up" data-aos-delay="200">
+      <button class="faq__trigger" type="button" aria-expanded="false">
+        <span class="faq__q">Do you work with contractors?</span>
+        <img class="faq__arrow" src="assets/icons/faq-arrow.svg" alt="" aria-hidden="true">
+      </button>
+      <div class="faq__answer">
+        <div class="faq__answer-inner">
+          <p class="faq__a">Yes, we have trusted construction crews. However, you can also hire your own
+            contractors —we’ll prepare all the necessary documentation for them and oversee the process.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq__item" data-aos="fade-up" data-aos-delay="300">
+      <button class="faq__trigger" type="button" aria-expanded="false">
+        <span class="faq__q">Can I choose the furniture myself?</span>
+        <img class="faq__arrow" src="assets/icons/faq-arrow.svg" alt="" aria-hidden="true">
+      </button>
+      <div class="faq__answer">
+        <div class="faq__answer-inner">
+          <p class="faq__a">Absolutely. We can select everything for you, or curate the options together —
+            the final choice always stays with you.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq__item" data-aos="fade-up" data-aos-delay="400">
+      <button class="faq__trigger" type="button" aria-expanded="false">
+        <span class="faq__q">What guarantees do you offer?</span>
+        <img class="faq__arrow" src="assets/icons/faq-arrow.svg" alt="" aria-hidden="true">
+      </button>
+      <div class="faq__answer">
+        <div class="faq__answer-inner">
+          <p class="faq__a">We provide a contract with fixed deadlines and budget, author’s supervision at
+            every stage, and a guarantee on all completed work.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq__item" data-aos="fade-up" data-aos-delay="500">
+      <button class="faq__trigger" type="button" aria-expanded="false">
+        <span class="faq__q">Do you work outside of Vienna?</span>
+        <img class="faq__arrow" src="assets/icons/faq-arrow.svg" alt="" aria-hidden="true">
+      </button>
+      <div class="faq__answer">
+        <div class="faq__answer-inner">
+          <p class="faq__a">Yes, we work in Vienna and throughout Europe, handling projects both remotely
+            and on-site wherever needed.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact__inner">
+    <video class="contact__bg" autoplay muted loop playsinline preload="auto">
+      <source src="assets/vid/contact.mp4" type="video/mp4">
+    </video>
+
+    <div class="contact__top">
+      <a class="contact__logo" href="#home" aria-label="KAR Interiors">
+        <img src="assets/icons/logo.svg" alt="KAR Interiors">
+      </a>
+      <a class="contact__link" href="#contact">Contact Us</a>
+    </div>
+
+    <div class="contact__main">
+      <h2 class="contact__title">Fill out the forms, and we'll contact you for a free consultation</h2>
+
+      <form class="contact__form" novalidate>
+        <div class="contact__fields">
+          <input class="contact__input" type="text" name="name" placeholder="Your name" autocomplete="name">
+          <input class="contact__input" type="tel" name="phone" placeholder="Phone number" autocomplete="tel">
+          <input class="contact__input" type="email" name="email" placeholder="E-Mail" autocomplete="email">
+
+          <div class="contact__select" data-select>
+            <button class="contact__select-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+              <span class="contact__select-value">Property Type</span>
+              <img class="contact__select-chevron" src="assets/icons/dropdown-chevron.svg" alt="" aria-hidden="true">
+            </button>
+            <ul class="contact__select-list" role="listbox">
+              <li class="contact__select-option" role="option" data-value="apartment">Apartment</li>
+              <li class="contact__select-option" role="option" data-value="house">House</li>
+              <li class="contact__select-option" role="option" data-value="office">Office</li>
+              <li class="contact__select-option" role="option" data-value="commercial">Commercial</li>
+            </ul>
+            <input type="hidden" name="propertyType" value="">
+          </div>
+        </div>
+
+        <button class="contact__submit" type="submit">
+          Leave a request
+          <img src="assets/icons/btn-arrow.svg" alt="" aria-hidden="true">
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__content">
+    <div class="footer__top">
+      <nav class="footer__links" aria-label="Footer">
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <button class="footer__totop" type="button" aria-label="Back to top">
+        <img src="assets/icons/to-top-arrow.svg" alt="" aria-hidden="true">
+      </button>
+    </div>
+
+    <div class="footer__mid">
+      <div class="footer__mid-row">
+        <div class="footer__mid-left">
+          <a class="footer__contact-link" href="#contact">
+            <span>Contact Us</span>
+            <img class="footer__arrow" src="assets/icons/footer-contact-arrow.svg" alt="" aria-hidden="true">
+          </a>
+
+          <div class="footer__dev">
+            <img class="footer__dev-logo" src="assets/icons/dev-logo.svg" alt="" aria-hidden="true">
+            <span class="footer__dev-text">Website<br>Development</span>
+          </div>
+        </div>
+
+        <div class="footer__mid-right">
+          <div class="footer__contact-item">
+            <div class="footer__contact-label">
+              <span>Phone</span>
+              <img src="assets/icons/footer-star-label.svg" alt="" aria-hidden="true">
+            </div>
+            <a class="footer__contact-value" href="tel:+9712424048">971-242-4048</a>
+          </div>
+
+          <div class="footer__contact-item">
+            <div class="footer__contact-label">
+              <span>E-Mail</span>
+              <img src="assets/icons/footer-star-label.svg" alt="" aria-hidden="true">
+            </div>
+            <a class="footer__contact-value" href="mailto:RazuConstruct@gmail.com">RazuConstruct@gmail.com</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__mid-row footer__mid-row--bottom">
+        <div class="footer__copy">
+          <span>© 2026</span>
+          <a class="footer__policy" href="#">Pricacy and Policy</a>
+        </div>
+
+        <div class="footer__socials">
+          <a class="footer__social" href="#">
+            <span>telegram</span>
+            <img src="assets/icons/footer-social.svg" alt="" aria-hidden="true">
+          </a>
+          <a class="footer__social" href="#">
+            <span>whatsapp</span>
+            <img src="assets/icons/footer-social.svg" alt="" aria-hidden="true">
+          </a>
+          <a class="footer__social" href="#">
+            <span>instagram</span>
+            <img src="assets/icons/footer-social.svg" alt="" aria-hidden="true">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer__map" id="footer-map" aria-label="Location map" role="img"></div>
+</footer>
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/countup.js@2.8.0/dist/countUp.umd.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
