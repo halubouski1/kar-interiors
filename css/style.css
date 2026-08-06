@@ -169,6 +169,276 @@ ul {
 }
 
 /* ==========================================================================
+   Fullscreen menu (burger) — slides down from the top
+   ========================================================================== */
+.menu {
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #1a1a1a;
+    background-image: url("../assets/img/menu-bg.png");
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    transform: translateY(-100%);
+    visibility: hidden;
+    transition: transform 0.75s cubic-bezier(0.76, 0, 0.24, 1),
+                visibility 0s linear 0.75s;
+}
+
+.menu.is-open {
+    transform: translateY(0);
+    visibility: visible;
+    transition: transform 0.75s cubic-bezier(0.76, 0, 0.24, 1),
+                visibility 0s;
+}
+
+.menu__close {
+    position: absolute;
+    top: 40px;
+    right: 57px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.menu__close:hover {
+    opacity: 0.7;
+    transform: rotate(90deg);
+}
+
+.menu__close img {
+    width: 23px;
+    height: 23px;
+}
+
+.menu__inner {
+    display: flex;
+    gap: 495px;
+    min-height: 100%;
+    padding: 237px 0 10px 237px;
+}
+
+/* Left column */
+.menu__left {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+}
+
+.menu__logo {
+    width: 182px;
+    height: auto;
+}
+
+.menu__contact {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.menu__label {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    color: #fff;
+}
+
+.menu__contact-link {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 78%;
+    color: #fff;
+    transition: color 0.25s ease;
+}
+
+.menu__contact-link:hover {
+    color: #fff;
+}
+
+.menu__socials {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Right column — main nav */
+.menu__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+.menu__nav-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    color: #fff;
+    transition: opacity 0.25s ease;
+}
+
+.menu__nav-item:hover {
+    opacity: 0.65;
+}
+
+.menu__num {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: -0.03em;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.menu__nav-text {
+    font-weight: 400;
+    font-size: 75px;
+    line-height: 100%;
+    letter-spacing: -0.03em;
+    color: #fff;
+}
+
+/* ==========================================================================
+   Popup (modal) — centered, scrolls on short screens
+   ========================================================================== */
+.popup {
+    position: fixed;
+    inset: 0;
+    z-index: 110;
+    display: flex;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0s linear 0.4s;
+}
+
+.popup.is-open {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.4s ease, visibility 0s;
+}
+
+.popup__window {
+    position: relative;
+    margin: auto; /* centers both axes and stays scroll-safe when taller than the screen */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1037px;
+    padding: 146px 40px;
+    border-radius: 0;
+    overflow: hidden;
+    background-color: #1a1a1a;
+    background-image: url("../assets/img/popup-bg.png");
+    background-size: cover;
+    background-position: center;
+    overflow: scroll;
+    color: #fff;
+    transform: translateY(24px) scale(0.98);
+    transition: transform 0.4s ease;
+}
+
+.popup.is-open .popup__window {
+    transform: translateY(0) scale(1);
+}
+
+.popup__close {
+    position: absolute;
+    top: 33px;
+    right: 33px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.popup__close:hover {
+    opacity: 0.7;
+    transform: rotate(90deg);
+}
+
+.popup__close img {
+    width: 22px;
+    height: 22px;
+}
+
+.popup__title {
+    margin-bottom: 40px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 55px;
+    line-height: 100%;
+    text-align: center;
+    color: #fff;
+}
+
+.popup__form {
+    display: flex;
+    flex-direction: column;
+    width: 508px;
+    max-width: 100%;
+    align-items: center;
+}
+
+.popup__fields {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.popup__input {
+    width: 100%;
+    height: 53px;
+    padding: 0 30px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 85px;
+    background-color: transparent;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 114%;
+    letter-spacing: -0.03em;
+    color: #fff;
+    transition: border-color 0.25s ease;
+}
+
+.popup__input::placeholder {
+    color: rgba(255, 255, 255, 0.25);
+}
+
+.popup__input:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.popup__submit {
+    margin-top: 20px;
+    border-radius: 90px;
+    background: #ff5b0c;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 120%;
+    letter-spacing: -0.04em;
+    text-align: center;
+    color: #fff;
+    transition: all 0.25s ease;
+    padding: 18px 35px;
+}
+
+.popup__submit:hover {
+    opacity: 0.8;
+}
+
+/* ==========================================================================
    Hero
    ========================================================================== */
 .hero {
@@ -475,6 +745,14 @@ ul {
     will-change: opacity;
 }
 
+.service-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+}
+
 .service-card:hover::before {
     opacity: 0;
 }
@@ -603,25 +881,27 @@ ul {
     margin-bottom: 37px;
 }
 
-/* .about__btn {
+.about__btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 15px 34px;
-    border-radius: 100px;
-    background-color: #e8671c;
+    padding: 20px 33px;
+    border-radius: 750px;
+    background-color: #FF5300;
     font-weight: 700;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
+    text-align: center;
     color: #fff;
     transition: background-color 0.25s ease;
 }
 
 .about__btn:hover {
     background-color: #d15a13;
-} */
-.about__btn {
+}
+
+.light__btn {
     font-size: 15px;
     padding: 18px 16px 18px 32px;
     gap: 60px;
@@ -1271,7 +1551,10 @@ ul {
     font-size: 60px;
     line-height: 105%;
     letter-spacing: -0.03em;
-    color: #646464;
+    background: linear-gradient(to right, #fff 18%, #646464 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .faq__subtitle {
@@ -1644,6 +1927,10 @@ ul {
 
 .footer__totop:hover {
     background-color: rgba(255, 255, 255, 0.18);
+}
+
+.footer__totop--mobile {
+    display: none;
 }
 
 .footer__totop img {

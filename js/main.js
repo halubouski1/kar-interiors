@@ -88,11 +88,17 @@ if (typeof Swiper !== 'undefined' && document.querySelector('.portfolio__swiper'
   new Swiper('.portfolio__swiper', {
     loop: false,
     speed: 800,
+    spaceBetween: 20,
     grabCursor: true,
     navigation: {
       prevEl: '.portfolio__prev',
       nextEl: '.portfolio__next',
     },
+    breakpoints: {
+      1024: {
+        spaceBetween: 0,
+      },
+      },
   });
 }
 
@@ -102,14 +108,31 @@ if (typeof Swiper !== 'undefined' && document.querySelector('.portfolio__swiper'
 if (typeof Swiper !== 'undefined' && document.querySelector('.reviews__swiper')) {
   new Swiper('.reviews__swiper', {
     slidesPerView: 'auto',
-    spaceBetween: 15,
-    slidesOffsetBefore: 30,
-    slidesOffsetAfter: 30,
+    spaceBetween: 40, // ≤570: one full-width card, next one fully off-screen
+    slidesOffsetBefore: 20,
+    slidesOffsetAfter: 20,
     speed: 700,
     grabCursor: true,
     navigation: {
       prevEl: '.reviews__prev',
       nextEl: '.reviews__next',
+    },
+    breakpoints: {
+      571: {
+        spaceBetween: 15,
+        slidesOffsetBefore: 20,
+        slidesOffsetAfter: 20,
+      },
+      1024: {
+        spaceBetween: 11,
+        slidesOffsetBefore: 24,
+        slidesOffsetAfter: 24,
+      },
+      1919: {
+        spaceBetween: 15,
+        slidesOffsetBefore: 30,
+        slidesOffsetAfter: 30,
+      }
     },
   });
 }
@@ -250,13 +273,32 @@ if (typeof L !== 'undefined' && mapEl) {
 }
 
 // ========================================
-// Create — animated stat counters (CountUp.js)
+// Create — stats: counters on desktop, marquee on small screens
 // ========================================
-const CountUpLib = (window.countUp && window.countUp.CountUp) || window.CountUp;
-const statNums = document.querySelectorAll('.create__num');
+const statsBlock = document.querySelector('.create__stats');
 
-if (CountUpLib && statNums.length) {
-  const counters = [];
+if (statsBlock && window.matchMedia('(max-width: 769px)').matches) {
+  // Small screens: no counting — turn the stats into an infinite auto-slider
+  const track = document.createElement('div');
+  track.className = 'create__stats-track';
+  while (statsBlock.firstChild) track.appendChild(statsBlock.firstChild);
+
+  // Duplicate the stats so the loop is seamless
+  track.querySelectorAll('.create__stat').forEach((stat) => {
+    const clone = stat.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    track.appendChild(clone);
+  });
+
+  statsBlock.classList.add('is-marquee');
+  statsBlock.appendChild(track);
+} else {
+  // Desktop: count up the numbers when the block scrolls into view
+  const CountUpLib = (window.countUp && window.countUp.CountUp) || window.CountUp;
+  const statNums = document.querySelectorAll('.create__num');
+
+  if (CountUpLib && statNums.length) {
+    const counters = [];
 
   statNums.forEach((el) => {
     const target = parseInt(el.textContent.replace(/\D/g, ''), 10);
@@ -273,16 +315,86 @@ if (CountUpLib && statNums.length) {
     }));
   });
 
-  const statsBlock = document.querySelector('.create__stats');
-  if (statsBlock && counters.length) {
-    const io = new IntersectionObserver((entries, obs) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        counters.forEach((c) => c.start());
-        obs.disconnect();
-      });
-    }, { threshold: 0.4 });
+    if (counters.length) {
+      const io = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          counters.forEach((c) => c.start());
+          obs.disconnect();
+        });
+      }, { threshold: 0.4 });
 
-    io.observe(statsBlock);
+      io.observe(statsBlock);
+    }
   }
+}
+
+// ========================================
+// Fullscreen burger menu
+// ========================================
+const menu = document.querySelector('.menu');
+const burgerBtn = document.querySelector('.header__burger');
+const menuCloseBtn = document.querySelector('.menu__close');
+
+if (menu && burgerBtn) {
+  const openMenu = () => {
+    menu.classList.add('is-open');
+    menu.setAttribute('aria-hidden', 'false');
+    if (lenis) lenis.stop(); // lock background scroll
+  };
+
+  const closeMenu = () => {
+    menu.classList.remove('is-open');
+    menu.setAttribute('aria-hidden', 'true');
+    if (lenis) lenis.start();
+  };
+
+  burgerBtn.addEventListener('click', openMenu);
+  if (menuCloseBtn) menuCloseBtn.addEventListener('click', closeMenu);
+
+  // Close on a menu link click (capture runs before the anchor-scroll handler,
+  // so Lenis is restarted before the smooth scroll fires)
+  menu.querySelectorAll('a[href]').forEach((link) => {
+    link.addEventListener('click', closeMenu, { capture: true });
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && menu.classList.contains('is-open')) closeMenu();
+  });
+}
+
+// ========================================
+// Popup (modal)
+// ========================================
+const popup = document.querySelector('.popup');
+const popupOpeners = document.querySelectorAll('[data-popup-open]');
+
+if (popup && popupOpeners.length) {
+  const openPopup = (e) => {
+    if (e) e.preventDefault();
+    popup.classList.add('is-open');
+    popup.setAttribute('aria-hidden', 'false');
+    if (lenis) lenis.stop();
+  };
+
+  const closePopup = () => {
+    popup.classList.remove('is-open');
+    popup.setAttribute('aria-hidden', 'true');
+    if (lenis) lenis.start();
+  };
+
+  popupOpeners.forEach((btn) => btn.addEventListener('click', openPopup));
+  popup.querySelectorAll('[data-popup-close]').forEach((el) => el.addEventListener('click', closePopup));
+
+  // Click on the dark backdrop (outside the window) closes it
+  popup.addEventListener('click', (e) => {
+    if (e.target === popup) closePopup();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && popup.classList.contains('is-open')) closePopup();
+  });
+
+  const popupForm = popup.querySelector('.popup__form');
+  if (popupForm) popupForm.addEventListener('submit', (e) => e.preventDefault());
 }
