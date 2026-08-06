@@ -213,15 +213,14 @@ if (contactForm) {
 }
 
 // ========================================
-// Footer — back to top
+// Footer — back to top (desktop + mobile buttons)
 // ========================================
-const toTopBtn = document.querySelector('.footer__totop');
-if (toTopBtn) {
-  toTopBtn.addEventListener('click', () => {
+document.querySelectorAll('.footer__totop').forEach((btn) => {
+  btn.addEventListener('click', () => {
     if (lenis) lenis.scrollTo(0, { duration: 1.4 });
     else window.scrollTo({ top: 0, behavior: 'smooth' });
   });
-}
+});
 
 // ========================================
 // Smooth scroll for in-page anchor links (via Lenis)
