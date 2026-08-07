@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ren">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+      <link rel="stylesheet" href="css/normalize.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/media.css">
+      <link rel="stylesheet" href="css/portfolio.css">
+      <link rel="stylesheet" href="css/media-portfolio.css">
+      <script>document.documentElement.style.setProperty("--fixed-vh", window.innerHeight + "px");</script>
+      <title>KAR Interiors</title>
+</head>
+<body>
+
+<header class="header">
+  <button class="header__burger" type="button" aria-label="Open menu">
+    <img src="assets/icons/burger-menu.svg" alt="" aria-hidden="true">
+  </button>
+
+  <nav class="header__nav" aria-label="Primary">
+    <a class="header__link" href="#home">Home</a>
+    <a class="header__link" href="#about">About Us</a>
+    <a class="header__link" href="#services">Services</a>
+    <a class="header__link" href="#projects">Projects</a>
+    <a class="header__link" href="#contact">Contact Us</a>
+  </nav>
+
+  <a class="header__request" href="#" data-popup-open>
+    Leave a request
+    <img src="assets/icons/btn-arrow.svg" alt="" aria-hidden="true">
+  </a>
+</header>
+
+<div class="menu" id="menu" aria-hidden="true" data-lenis-prevent>
+  <button class="menu__close" type="button" aria-label="Close menu">
+    <img src="assets/icons/close.svg" alt="" aria-hidden="true">
+  </button>
+
+  <div class="menu__inner">
+    <div class="menu__left">
+      <img class="menu__logo" src="assets/icons/logo.svg" alt="KAR Interiors">
+
+      <div class="menu__contact">
+        <span class="menu__label">Phone.</span>
+        <a class="menu__contact-link" href="tel:+9712424048">971-242-4048</a>
+      </div>
+
+      <div class="menu__contact">
+        <span class="menu__label">Email.</span>
+        <a class="menu__contact-link" href="mailto:RazuConstruct@gmail.com">RazuConstruct@gmail.com</a>
+      </div>
+
+      <div class="menu__contact menu__contact--socials">
+        <span class="menu__label">Social media.</span>
+        <div class="menu__socials">
+          <a class="menu__contact-link" href="#">telegram</a>
+          <a class="menu__contact-link" href="#">whatsapp</a>
+          <a class="menu__contact-link" href="#">instagram</a>
+        </div>
+      </div>
+    </div>
+
+    <nav class="menu__nav" aria-label="Main">
+      <a class="menu__nav-item" href="#home">
+        <span class="menu__num">01</span>
+        <span class="menu__nav-text">Home</span>
+      </a>
+      <a class="menu__nav-item" href="#about">
+        <span class="menu__num">02</span>
+        <span class="menu__nav-text">About Us</span>
+      </a>
+      <a class="menu__nav-item" href="#services">
+        <span class="menu__num">03</span>
+        <span class="menu__nav-text">Services</span>
+      </a>
+      <a class="menu__nav-item" href="#projects">
+        <span class="menu__num">04</span>
+        <span class="menu__nav-text">Projects</span>
+      </a>
+      <a class="menu__nav-item" href="#contact">
+        <span class="menu__num">05</span>
+        <span class="menu__nav-text">Contact Us</span>
+      </a>
+    </nav>
+  </div>
+</div>
+
+<section class="hero pp-hero" id="home">
+  <video class="hero__bg" autoplay muted loop playsinline preload="auto">
+    <source src="assets/vid/portfolio-hero.mp4" type="video/mp4">
+  </video>
+  <span class="hero__blur pp-hero__blur" aria-hidden="true"></span>
+
+  <div class="hero__bottom">
+    <div class="po-hero__intro">
+      <p class="po-hero__desc">
+        / Completed Interior and Architectural Projects
+      </p>
+      <h1 class="po-hero__title">
+        Portfolio
+      </h1>
+    </div>
+
+    <button class="hero__scroll" type="button" aria-label="Scroll to next section">
+      <img src="assets/icons/scroll-down.svg" alt="" aria-hidden="true">
+    </button>
+  </div>
+</section>
+
+<section class="cases" id="cases">
+  <div class="cases__top">
+    <div class="cases__filters">
+      <button class="cases__filter is-active" type="button" data-filter="all"><span class="cases__dot"></span>All</button>
+      <button class="cases__filter" type="button" data-filter="apartments"><span class="cases__dot"></span>Apartments</button>
+      <button class="cases__filter" type="button" data-filter="houses"><span class="cases__dot"></span>Houses</button>
+      <button class="cases__filter" type="button" data-filter="public"><span class="cases__dot"></span>Public Spaces</button>
+    </div>
+
+    <div class="cases__nav">
+      <button class="reviews__arrow cases__arrow cases__arrow--prev" type="button" aria-label="Previous">
+        <img src="assets/icons/slider-arrow.svg" alt="" aria-hidden="true">
+      </button>
+      <button class="reviews__arrow cases__arrow cases__arrow--next" type="button" aria-label="Next">
+        <img src="assets/icons/slider-arrow.svg" alt="" aria-hidden="true">
+      </button>
+    </div>
+  </div>
+
+  <div class="swiper cases__grid">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide case-card" data-cat="apartments">
+        <img class="case-card__img" src="assets/img/portfolio-card-1.jpg" alt="">
+        <span class="case-card__tag">
+          <span class="case-card__pin"><img src="assets/icons/location.svg" alt="" aria-hidden="true"></span>
+          <span>Meydan Horizon</span>
+        </span>
+        <div class="case-card__bottom">
+          <div class="case-card__info">
+            <span class="case-card__name">Case<br>Nameee</span>
+            <span class="case-card__loc">Located in Dubai<br>Dubai Marina</span>
+          </div>
+          <a class="header__request case-card__btn" href="#">Watch the case <img src="assets/icons/btn-arrow.svg" alt="" aria-hidden="true"></a>
+        </div>
+      </div>
+
+      <div class="swiper-slide case-card" data-cat="houses">
+        <img class="case-card__img" src="assets/img/portfolio-card-2.png" alt="">
+        <span class="case-card__tag">
+          <span class="case-card__pin"><img src="assets/icons/location.svg" alt="" aria-hidden="true"></span>
+          <span>Meydan Horizon</span>
+        </span>
+        <div class="case-card__bottom">
+          <div class="case-card__info">
+            <span class="case-card__name">Case<br>Nameee</span>
+            <span class="case-card__loc">Located in Dubai<br>Dubai Marina</span>
+          </div>
+          <a class="header__request case-card__btn" href="#">Watch the case <img src="assets/icons/btn-arrow.svg" alt="" aria-hidden="true"></a>
+        </div>
+      </div>
+
+      <div class="swiper-slide case-card" data-cat="public">
+        <img class="case-card__img" src="assets/img/portfolio-card-1.png" alt="">
+        <span class="case-card__tag">
+          <span class="case-card__pin"><img src="assets/icons/location.svg" alt="" aria-hidden="true"></span>
+          <span>Meydan Horizon</span>
+        </span>
+        <div class="case-card__bottom">
+          <div class="case-card__info">
+            <span class="case-card__name">Case<br>Nameee</span>
+            <span class="case-card__loc">Located in Dubai<br>Dubai Marina</span>
+          </div>
+          <a class="header__request case-card__btn" href="#">Watch the case <img src="assets/icons/btn-arrow.svg" alt="" aria-hidden="true"></a>
+        </div>
+      </div>
+
+      <div class="swiper-slide case-card" data-cat="apartments">
+        <img class="case-card__img" src="assets/img/services-card-2.png" alt="">
+        <span class="case-card__tag">
+          <span class="case-card__pin"><img src="assets/icons/location.svg" alt="" aria-hidden="true"></span>
+          <span>Meydan Horizon</span>
+        </span>
+        <div class="case-card__bottom">
+          <div class="case-card__info">
+            <span class="case-card__name">Case<br>Nameee</span>
+            <span class="case-card__loc">Located in Dubai<br>Dubai Marina</span>
+          </div>
+          <a class="header__request case-card__btn" href="#">Watch the case <img src="assets/icons/btn-arrow.svg" alt="" aria-hidden="true"></a>
+        </div>
+      </div>
+
+      <div class="swiper-slide case-card" data-cat="houses">
+        <img class="case-card__img" src="assets/img/services-card-3.png" alt="">
+        <span class="case-card__tag">
+          <span class="case-card__pin"><img src="assets/icons/location.svg" alt="" aria-hidden="true"></span>
+          <span>Meydan Horizon</span>
+        </span>
+        <div class="case-card__bottom">
+          <div class="case-card__info">
+            <span class="case-card__name">Case<br>Nameee</span>
+            <span class="case-card__loc">Located in Dubai<br>Dubai Marina</span>
+          </div>
+          <a class="header__request case-card__btn" href="#">Watch the case <img src="assets/icons/btn-arrow.svg" alt="" aria-hidden="true"></a>
+        </div>
+      </div>
+
+      <div class="swiper-slide case-card" data-cat="public">
+        <img class="case-card__img" src="assets/img/services-card-4.png" alt="">
+        <span class="case-card__tag">
+          <span class="case-card__pin"><img src="assets/icons/location.svg" alt="" aria-hidden="true"></span>
+          <span>Meydan Horizon</span>
+        </span>
+        <div class="case-card__bottom">
+          <div class="case-card__info">
+            <span class="case-card__name">Case<br>Nameee</span>
+            <span class="case-card__loc">Located in Dubai<br>Dubai Marina</span>
+          </div>
+          <a class="header__request case-card__btn" href="#">Watch the case <img src="assets/icons/btn-arrow.svg" alt="" aria-hidden="true"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="swiper cases__big">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide case-big" data-cat="public">
+        <img class="case-big__img" src="assets/img/portfolio-card-1.png" alt="">
+        <span class="case-card__tag">
+          <span class="case-card__pin"><img src="assets/icons/location.svg" alt="" aria-hidden="true"></span>
+          <span>Meydan Horizon</span>
+        </span>
+        <div class="case-big__bottom">
+          <div class="case-big__info">
+            <span class="case-big__name">Projekte<br>GH-Projekt</span>
+            <span class="case-big__desc">Interior Design<br>By KAR Interiors</span>
+          </div>
+          <a class="header__request case-big__btn" href="#">Watch the case <img src="assets/icons/btn-arrow.svg" alt="" aria-hidden="true"></a>
+        </div>
+      </div>
+
+      <div class="swiper-slide case-big" data-cat="houses">
+        <img class="case-big__img" src="assets/img/portfolio-card-2.png" alt="">
+        <span class="case-card__tag">
+          <span class="case-card__pin"><img src="assets/icons/location.svg" alt="" aria-hidden="true"></span>
+          <span>Meydan Horizon</span>
+        </span>
+        <div class="case-big__bottom">
+          <div class="case-big__info">
+            <span class="case-big__name">Coastal<br>Villa</span>
+            <span class="case-big__desc">Interior Design<br>By KAR Interiors</span>
+          </div>
+          <a class="header__request case-big__btn" href="#">Watch the case <img src="assets/icons/btn-arrow.svg" alt="" aria-hidden="true"></a>
+        </div>
+      </div>
+
+      <div class="swiper-slide case-big" data-cat="apartments">
+        <img class="case-big__img" src="assets/img/portfolio-card-1.jpg" alt="">
+        <span class="case-card__tag">
+          <span class="case-card__pin"><img src="assets/icons/location.svg" alt="" aria-hidden="true"></span>
+          <span>Meydan Horizon</span>
+        </span>
+        <div class="case-big__bottom">
+          <div class="case-big__info">
+            <span class="case-big__name">Urban<br>Apartment</span>
+            <span class="case-big__desc">Interior Design<br>By KAR Interiors</span>
+          </div>
+          <a class="header__request case-big__btn" href="#">Watch the case <img src="assets/icons/btn-arrow.svg" alt="" aria-hidden="true"></a>
+        </div>
+      </div>
+
+      <div class="swiper-slide case-big" data-cat="public">
+        <img class="case-big__img" src="assets/img/services-card-2.png" alt="">
+        <span class="case-card__tag">
+          <span class="case-card__pin"><img src="assets/icons/location.svg" alt="" aria-hidden="true"></span>
+          <span>Meydan Horizon</span>
+        </span>
+        <div class="case-big__bottom">
+          <div class="case-big__info">
+            <span class="case-big__name">Riverside<br>Loft</span>
+            <span class="case-big__desc">Interior Design<br>By KAR Interiors</span>
+          </div>
+          <a class="header__request case-big__btn" href="#">Watch the case <img src="assets/icons/btn-arrow.svg" alt="" aria-hidden="true"></a>
+        </div>
+      </div>
+    </div>
+
+    <button class="portfolio__arrow cases__big-arrow cases__big-arrow--prev" type="button" aria-label="Previous case">
+      <img src="assets/icons/slider-arrow.svg" alt="" aria-hidden="true">
+    </button>
+    <button class="portfolio__arrow cases__big-arrow cases__big-arrow--next" type="button" aria-label="Next case">
+      <img src="assets/icons/slider-arrow.svg" alt="" aria-hidden="true">
+    </button>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact__inner">
+    <video class="contact__bg" autoplay muted loop playsinline preload="auto">
+      <source src="assets/vid/contact.mp4" type="video/mp4">
+    </video>
+
+    <div class="contact__top">
+      <a class="contact__logo" href="#home" aria-label="KAR Interiors">
+        <img src="assets/icons/logo.svg" alt="KAR Interiors">
+      </a>
+      <a class="contact__link" href="#contact">Contact Us</a>
+    </div>
+
+    <div class="contact__main">
+      <h2 class="contact__title">Fill out the forms, and we'll contact you for a free consultation</h2>
+
+      <form class="contact__form" novalidate>
+        <div class="contact__fields">
+          <input class="contact__input" type="text" name="name" placeholder="Your name" autocomplete="name">
+          <input class="contact__input" type="tel" name="phone" placeholder="Phone number" autocomplete="tel">
+          <input class="contact__input" type="email" name="email" placeholder="E-Mail" autocomplete="email">
+
+          <div class="contact__select" data-select>
+            <button class="contact__select-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+              <span class="contact__select-value">Property Type</span>
+              <img class="contact__select-chevron" src="assets/icons/dropdown-chevron.svg" alt="" aria-hidden="true">
+            </button>
+            <ul class="contact__select-list" role="listbox">
+              <li class="contact__select-option" role="option" data-value="apartment">Apartment</li>
+              <li class="contact__select-option" role="option" data-value="house">House</li>
+              <li class="contact__select-option" role="option" data-value="office">Office</li>
+              <li class="contact__select-option" role="option" data-value="commercial">Commercial</li>
+            </ul>
+            <input type="hidden" name="propertyType" value="">
+          </div>
+        </div>
+
+        <button class="contact__submit" type="submit">
+          Leave a request
+          <img src="assets/icons/btn-arrow.svg" alt="" aria-hidden="true">
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__content">
+    <div class="footer__top">
+      <nav class="footer__links" aria-label="Footer">
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <button class="footer__totop" type="button" aria-label="Back to top">
+        <img src="assets/icons/to-top-arrow.svg" alt="" aria-hidden="true">
+      </button>
+    </div>
+
+    <div class="footer__mid">
+      <div class="footer__mid-row">
+        <div class="footer__mid-left">
+          <div>
+            <a class="footer__contact-link" href="#contact">
+              <span>Contact Us</span>
+              <img class="footer__arrow" src="assets/icons/footer-contact-arrow.svg" alt="" aria-hidden="true">
+            </a>
+  
+            <div class="footer__dev">
+              <img class="footer__dev-logo" src="assets/icons/dev-logo.svg" alt="" aria-hidden="true">
+              <span class="footer__dev-text">Website<br>Development</span>
+            </div>
+          </div>
+
+      <button class="footer__totop--mobile footer__totop" type="button" aria-label="Back to top">
+        <img src="assets/icons/to-top-arrow.svg" alt="" aria-hidden="true">
+      </button>
+        </div>
+
+        <div class="footer__mid-right">
+          <div class="footer__contact-item">
+            <div class="footer__contact-label">
+              <span>Phone</span>
+              <img src="assets/icons/footer-star-label.svg" alt="" aria-hidden="true">
+            </div>
+            <a class="footer__contact-value" href="tel:+9712424048">971-242-4048</a>
+          </div>
+
+          <div class="footer__contact-item">
+            <div class="footer__contact-label">
+              <span>E-Mail</span>
+              <img src="assets/icons/footer-star-label.svg" alt="" aria-hidden="true">
+            </div>
+            <a class="footer__contact-value" href="mailto:RazuConstruct@gmail.com">RazuConstruct@gmail.com</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__mid-row footer__mid-row--bottom">
+        <div class="footer__copy">
+          <span>© 2026</span>
+          <a class="footer__policy" href="#">Pricacy and Policy</a>
+        </div>
+
+        <div class="footer__socials">
+          <a class="footer__social" href="#">
+            <span>telegram</span>
+            <img src="assets/icons/footer-social.svg" alt="" aria-hidden="true">
+          </a>
+          <a class="footer__social" href="#">
+            <span>whatsapp</span>
+            <img src="assets/icons/footer-social.svg" alt="" aria-hidden="true">
+          </a>
+          <a class="footer__social" href="#">
+            <span>instagram</span>
+            <img src="assets/icons/footer-social.svg" alt="" aria-hidden="true">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer__map" id="footer-map" aria-label="Location map" role="img"></div>
+</footer>
+
+<div class="popup" id="popup" aria-hidden="true" data-lenis-prevent>
+  <div class="popup__window" role="dialog" aria-modal="true" aria-label="Leave a request">
+    <button class="popup__close" type="button" data-popup-close aria-label="Close">
+      <img src="assets/icons/close.svg" alt="" aria-hidden="true">
+    </button>
+
+    <h2 class="popup__title">Fill out a consultation request</h2>
+
+    <form class="popup__form" novalidate>
+      <div class="popup__fields">
+        <input class="popup__input" type="text" name="name" placeholder="Your name" autocomplete="name">
+        <input class="popup__input" type="tel" name="phone" placeholder="Phone number" autocomplete="tel">
+        <input class="popup__input" type="email" name="email" placeholder="E-Mail" autocomplete="email">
+      </div>
+
+      <button class="popup__submit" type="submit">Leave a request</button>
+    </form>
+  </div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/countup.js@2.8.0/dist/countUp.umd.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

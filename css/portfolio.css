@@ -1,0 +1,300 @@
+.po-hero__desc {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 133%;
+    letter-spacing: -0.03em;
+    color: #fff;
+}
+
+.po-hero__intro {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.po-hero__title {
+    font-weight: 300;
+    font-size: 300px;
+    line-height: 78%;
+    letter-spacing: -0.03em;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.pp-hero {
+    padding-bottom: 30px;
+}
+
+
+/* ==========================================================================
+   Cases (filterable grid slider + big slider)
+   ========================================================================== */
+.cases {
+    position: relative;
+    padding: 150px 0 200px;
+    background-color: #000;
+    background-image: url("../assets/img/about-us-bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    overflow: hidden;
+}
+
+/* Top bar: filters + arrows */
+.cases__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin: 0 50px 48px 50px;
+    padding: 0 0px 27px 0cm;
+    margin-bottom: 48px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.cases__filters {
+    display: flex;
+    align-items: center;
+    gap: 75px;
+}
+
+.cases__filter {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 176%;
+    letter-spacing: -0.03em;
+    color: rgba(255, 255, 255, 0.4);
+    transition: color 0.25s ease;
+}
+
+.cases__filter:hover {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.cases__filter.is-active {
+    color: #fff;
+}
+
+.cases__dot {
+    flex-shrink: 0;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: currentColor;
+}
+
+.cases__nav {
+    display: flex;
+    gap: 7px;
+    flex-shrink: 0;
+}
+
+.cases__arrow--prev img {
+    transform: scaleX(-1);
+}
+
+/* Top grid slider */
+.cases__grid {
+    overflow: visible; /* the section clips instead, so cards can peek */
+}
+
+.cases__grid .swiper-wrapper {
+    align-items: stretch;
+}
+
+.cases__grid .swiper-slide {
+    width: 988px; /* 50 offset + 0 offset + 26 gap → 2 cards */
+    height: 491px;
+}
+
+.cases .swiper-slide.is-hidden {
+    display: none;
+}
+
+/* Cards fade/slide in when a filter is applied */
+@keyframes case-appear {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cases .swiper-slide.is-appearing {
+    animation: case-appear 0.5s ease both;
+    animation-delay: var(--appear-delay, 0ms);
+}
+
+/* Shared card visuals */
+.case-card,
+.case-big {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    border-radius: 6px;
+    color: #fff;
+}
+
+.case-card {
+    padding: 15px 23px 23px 15px;
+}
+
+.case-card__img,
+.case-big__img {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.case-card::after,
+.case-big::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 55%;
+    z-index: 1;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0));
+    pointer-events: none;
+}
+
+/* Tag (shared by both card types) */
+.case-card__tag {
+    gap: 16px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 27px;
+    background: rgba(255, 255, 255, 0.01);
+    position: relative;
+    z-index: 2;
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    padding: 11px 28px 11px 13px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: -0.03em;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/* Bottom of small card */
+.case-card__bottom {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.case-card__info {
+    display: flex;
+    align-items: flex-end;
+    gap: 24px;
+    margin-left: 10px;
+}
+
+.case-card__name {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 23px;
+    line-height: 96%;
+    color: #fff;
+}
+
+.case-card__loc {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 129%;
+    color: #fff;
+}
+
+.case-card__btn,
+.case-big__btn {
+    flex-shrink: 0;
+    padding: 18px 17px 18px 25px;
+    gap: 75px;
+}
+
+/* Big slider */
+.cases__big {
+    position: relative;
+    margin-top: 95px;
+    overflow: hidden;
+}
+
+.cases__big .swiper-slide {
+    height: 900px;
+    width: calc(100vw - 100px); /* 50 offset + 50 offset */
+}
+
+.case-big {
+    padding: 28px 34px 34px 20px;
+}
+
+.case-big__bottom {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.case-big__info {
+    display: flex;
+    align-items: flex-end;
+    gap: 25px;
+    margin-left: 20px;
+}
+
+.case-big__name {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 27px;
+    line-height: 111%;
+    color: #fff;
+}
+
+.case-big__desc {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 125%;
+    color: #fff;
+}
+
+/* Big slider arrows (reuse .portfolio__arrow look) */
+.cases__big-arrow {
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    width: 92px;
+    height: 92px;
+}
+
+.cases__big-arrow--prev {
+    left: 90px;
+}
+
+.cases__big-arrow--next {
+    right: 90px;
+}
+
+.cases__big-arrow--prev img {
+    transform: scaleX(-1);
+}

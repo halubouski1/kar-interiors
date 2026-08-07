@@ -138,6 +138,121 @@ if (typeof Swiper !== 'undefined' && document.querySelector('.reviews__swiper'))
 }
 
 // ========================================
+// Cases — grid + big sliders, both filtered by category
+// ========================================
+if (typeof Swiper !== 'undefined' && document.querySelector('.cases__grid')) {
+  const casesGrid = new Swiper('.cases__grid', {
+    slidesPerView: 'auto',
+    spaceBetween: 26,
+    slidesOffsetBefore: 50,
+    slidesOffsetAfter: 0,
+    speed: 600,
+    grabCursor: true,
+    navigation: {
+      prevEl: '.cases__arrow--prev',
+      nextEl: '.cases__arrow--next',
+    },
+    breakpoints: {
+        1919: {
+        spaceBetween: 26,
+        slidesOffsetBefore: 50,
+        slidesOffsetAfter: 0,
+      },
+      1024: {
+        spaceBetween: 20,
+        slidesOffsetBefore: 42,
+        slidesOffsetAfter: 42,
+      },
+      571: {
+        spaceBetween: 30,
+        slidesOffsetBefore: 30,
+        slidesOffsetAfter: 30,
+      },
+      0: {
+        spaceBetween: 20,
+        slidesOffsetBefore: 20,
+        slidesOffsetAfter: 20,
+      },
+    },
+  });
+
+  const casesBig = document.querySelector('.cases__big')
+    ? new Swiper('.cases__big', {
+        slidesPerView: 'auto', // use the CSS slide width (100vw - 100px)
+        spaceBetween: 50,       // next card sits exactly off-screen (no peek)
+        slidesOffsetBefore: 50,
+        slidesOffsetAfter: 50,
+        speed: 700,
+        grabCursor: true,
+        navigation: {
+          prevEl: '.cases__big-arrow--prev',
+          nextEl: '.cases__big-arrow--next',
+        },
+        breakpoints: {
+          1919: {
+            spaceBetween: 50,
+            slidesOffsetBefore: 50,
+            slidesOffsetAfter: 50,
+          },
+          1024: {
+            spaceBetween: 42,
+            slidesOffsetBefore: 42,
+            slidesOffsetAfter: 42,
+          },
+          571: {
+          spaceBetween: 30,
+          slidesOffsetBefore: 30,
+          slidesOffsetAfter: 30,
+        },
+              0: {
+        spaceBetween: 20,
+        slidesOffsetBefore: 20,
+        slidesOffsetAfter: 20,
+      },
+        },
+      })
+    : null;
+
+  // Hide non-matching slides, then replay the staggered appear animation
+  const filterSlider = (swiper, slides, cat) => {
+    if (!swiper || !slides.length) return;
+
+    slides.forEach((slide) => {
+      const match = cat === 'all' || slide.dataset.cat === cat;
+      slide.classList.toggle('is-hidden', !match);
+      slide.classList.remove('is-appearing');
+    });
+
+    swiper.update();
+    swiper.slideTo(0, 0);
+
+    void swiper.el.offsetWidth; // force reflow so the animation replays
+    let visible = 0;
+    slides.forEach((slide) => {
+      if (slide.classList.contains('is-hidden')) return;
+      slide.style.setProperty('--appear-delay', `${visible * 60}ms`);
+      slide.classList.add('is-appearing');
+      visible += 1;
+    });
+  };
+
+  const filters = document.querySelectorAll('.cases__filter');
+  const gridSlides = [...document.querySelectorAll('.cases__grid .swiper-slide')];
+  const bigSlides = [...document.querySelectorAll('.cases__big .swiper-slide')];
+
+  filters.forEach((filter) => {
+    filter.addEventListener('click', () => {
+      filters.forEach((f) => f.classList.remove('is-active'));
+      filter.classList.add('is-active');
+
+      const cat = filter.dataset.filter;
+      filterSlider(casesGrid, gridSlides, cat);
+      filterSlider(casesBig, bigSlides, cat);
+    });
+  });
+}
+
+// ========================================
 // FAQ accordion (single-open, whole item clickable)
 // ========================================
 const faqItems = document.querySelectorAll('.faq__item');
