@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ren">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+      <link rel="stylesheet" href="css/normalize.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/media.css">
+      <link rel="stylesheet" href="css/project.css">
+      <link rel="stylesheet" href="css/media-project.css">
+      <script>document.documentElement.style.setProperty("--fixed-vh", window.innerHeight + "px");</script>
+      <title>KAR Interiors</title>
+</head>
+<body>
+
+<header class="header">
+  <button class="header__burger" type="button" aria-label="Open menu">
+    <img src="assets/icons/burger-menu.svg" alt="" aria-hidden="true">
+  </button>
+
+  <nav class="header__nav" aria-label="Primary">
+    <a class="header__link" href="#home">Home</a>
+    <a class="header__link" href="#about">About Us</a>
+    <a class="header__link" href="#services">Services</a>
+    <a class="header__link" href="#projects">Projects</a>
+    <a class="header__link" href="#contact">Contact Us</a>
+  </nav>
+
+  <a class="header__request" href="#" data-popup-open>
+    Leave a request
+    <img src="assets/icons/btn-arrow.svg" alt="" aria-hidden="true">
+  </a>
+</header>
+
+<div class="menu" id="menu" aria-hidden="true" data-lenis-prevent>
+  <button class="menu__close" type="button" aria-label="Close menu">
+    <img src="assets/icons/close.svg" alt="" aria-hidden="true">
+  </button>
+
+  <div class="menu__inner">
+    <div class="menu__left">
+      <img class="menu__logo" src="assets/icons/logo.svg" alt="KAR Interiors">
+
+      <div class="menu__contact">
+        <span class="menu__label">Phone.</span>
+        <a class="menu__contact-link" href="tel:+9712424048">971-242-4048</a>
+      </div>
+
+      <div class="menu__contact">
+        <span class="menu__label">Email.</span>
+        <a class="menu__contact-link" href="mailto:RazuConstruct@gmail.com">RazuConstruct@gmail.com</a>
+      </div>
+
+      <div class="menu__contact menu__contact--socials">
+        <span class="menu__label">Social media.</span>
+        <div class="menu__socials">
+          <a class="menu__contact-link" href="#">telegram</a>
+          <a class="menu__contact-link" href="#">whatsapp</a>
+          <a class="menu__contact-link" href="#">instagram</a>
+        </div>
+      </div>
+    </div>
+
+    <nav class="menu__nav" aria-label="Main">
+      <a class="menu__nav-item" href="#home">
+        <span class="menu__num">01</span>
+        <span class="menu__nav-text">Home</span>
+      </a>
+      <a class="menu__nav-item" href="#about">
+        <span class="menu__num">02</span>
+        <span class="menu__nav-text">About Us</span>
+      </a>
+      <a class="menu__nav-item" href="#services">
+        <span class="menu__num">03</span>
+        <span class="menu__nav-text">Services</span>
+      </a>
+      <a class="menu__nav-item" href="#projects">
+        <span class="menu__num">04</span>
+        <span class="menu__nav-text">Projects</span>
+      </a>
+      <a class="menu__nav-item" href="#contact">
+        <span class="menu__num">05</span>
+        <span class="menu__nav-text">Contact Us</span>
+      </a>
+    </nav>
+  </div>
+</div>
+
+<section class="hero" id="home">
+  <img class="hero__bg" src="assets/img/project-hero-bg.png" alt="Hero background">
+  <span class="hero__blur pr-hero__blur" aria-hidden="true"></span>
+
+  <div class="hero__bottom pr-hero__bottom">
+    <div class="pr-hero__intro">
+      <p class="pr-hero__desc">
+        APPARTMENTS
+      </p>
+      <h1 class="pr-hero__title">
+        PROJEKTE GH-PROJEKT
+      </h1>
+    </div>
+
+    <div class="hero_year">
+      20 <span class="hero_year__accent">26</span>
+    </div>
+  </div>
+</section>
+
+<section class="project" id="project">
+  <div class="project__top">
+    <span class="project__tag project__tag--active"><span class="project__dot"></span>Vienna</span>
+    <span class="project__tag"><span class="project__dot"></span>Appartments</span>
+    <span class="project__tag"><span class="project__dot"></span>152 m²</span>
+  </div>
+
+  <p class="project__desc">Jedes Projekt ist einzigartig und wird auf die persönlichen
+    Bedürfnisse jedes Kunden zugeschnitten. Die Kosten hängen von mehreren Faktoren ab,
+    die Sie selbst auswählen können.</p>
+
+  <div class="project__nav">
+    <button class="reviews__arrow project__arrow project__prev" type="button" aria-label="Previous">
+      <img src="assets/icons/slider-arrow.svg" alt="" aria-hidden="true">
+    </button>
+    <button class="reviews__arrow project__arrow project__next" type="button" aria-label="Next">
+      <img src="assets/icons/slider-arrow.svg" alt="" aria-hidden="true">
+    </button>
+  </div>
+
+  <div class="swiper project__slider">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide project__slide"><img src="assets/img/project-card-1.jpg" alt=""></div>
+      <div class="swiper-slide project__slide"><img src="assets/img/portfolio-card-2.png" alt=""></div>
+      <div class="swiper-slide project__slide"><img src="assets/img/portfolio-card-1.png" alt=""></div>
+      <div class="swiper-slide project__slide"><img src="assets/img/services-card-1.png" alt=""></div>
+      <div class="swiper-slide project__slide"><img src="assets/img/services-card-3.png" alt=""></div>
+      <div class="swiper-slide project__slide"><img src="assets/img/services-card-2.png" alt=""></div>
+    </div>
+  </div>
+</section>
+
+
+<section class="portfolio portfolio--project" id="projects">
+  <div class="swiper portfolio__swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide portfolio__slide portfolio__slide--project">
+        <span class="case-card__tag">
+          <span class="case-card__pin"><img src="assets/icons/location.svg" alt="" aria-hidden="true"></span>
+          <span>Meydan Horizon</span>
+        </span>
+        <img class="portfolio__img" src="assets/img/portfolio-card-2.png" alt="Case Nameee">
+        <div class="portfolio__caption portfolio__caption--project" >
+          <div class="portfolio__info">
+            <h3 class="portfolio__name">Case<br>Nameee</h3>
+            <span class="portfolio__desc">Interior update for the<br>country’s main park</span>
+          </div>
+          <a class="header__request light__btn" href="#">
+            Watch the case
+            <img src="assets/icons/btn-arrow.svg" alt="" aria-hidden="true">
+          </a>
+        </div>
+      </div>
+
+      <div class="swiper-slide portfolio__slide">
+        <span class="case-card__tag">
+          <span class="case-card__pin"><img src="assets/icons/location.svg" alt="" aria-hidden="true"></span>
+          <span>Meydan Horizon</span>
+        </span>
+        <img class="portfolio__img" src="assets/img/portfolio-card-1.png" alt="Seaside Villa">
+        <div class="portfolio__caption portfolio__caption--project" >
+          <div class="portfolio__info">
+            <h3 class="portfolio__name">Seaside<br>Villa</h3>
+            <span class="portfolio__desc">Full redesign of a family<br>residence by the coast</span>
+          </div>
+          <a class="header__request light__btn" href="#">
+            Watch the case
+            <img src="assets/icons/btn-arrow.svg" alt="" aria-hidden="true">
+          </a>
+        </div>
+      </div>
+
+      <div class="swiper-slide portfolio__slide">
+        <span class="case-card__tag">
+          <span class="case-card__pin"><img src="assets/icons/location.svg" alt="" aria-hidden="true"></span>
+          <span>Meydan Horizon</span>
+        </span>
+        <img class="portfolio__img" src="assets/img/portfolio-card-1.png" alt="Urban Apartment">
+        <div class="portfolio__caption portfolio__caption--project" >
+          <div class="portfolio__info">
+            <h3 class="portfolio__name">Urban<br>Apartment</h3>
+            <span class="portfolio__desc">Minimalist renovation in<br>the heart of the city</span>
+          </div>
+          <a class="header__request light__btn" href="#">
+            Watch the case
+            <img src="assets/icons/btn-arrow.svg" alt="" aria-hidden="true">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="portfolio__arrow portfolio__prev" type="button" aria-label="Previous case">
+    <img src="assets/icons/slider-arrow.svg" alt="" aria-hidden="true">
+  </button>
+  <button class="portfolio__arrow portfolio__next" type="button" aria-label="Next case">
+    <img src="assets/icons/slider-arrow.svg" alt="" aria-hidden="true">
+  </button>
+</section>
+
+<footer class="footer footer--project" id="contact">
+  <div class="footer__content">
+    <div class="footer__top">
+      <nav class="footer__links" aria-label="Footer">
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <button class="footer__totop" type="button" aria-label="Back to top">
+        <img src="assets/icons/to-top-arrow.svg" alt="" aria-hidden="true">
+      </button>
+    </div>
+
+    <div class="footer__mid">
+      <div class="footer__mid-row">
+        <div class="footer__mid-left">
+          <div>
+            <a class="footer__contact-link" href="#contact">
+              <span>Contact Us</span>
+              <img class="footer__arrow" src="assets/icons/footer-contact-arrow.svg" alt="" aria-hidden="true">
+            </a>
+  
+            <div class="footer__dev">
+              <img class="footer__dev-logo" src="assets/icons/dev-logo.svg" alt="" aria-hidden="true">
+              <span class="footer__dev-text">Website<br>Development</span>
+            </div>
+          </div>
+
+      <button class="footer__totop--mobile footer__totop" type="button" aria-label="Back to top">
+        <img src="assets/icons/to-top-arrow.svg" alt="" aria-hidden="true">
+      </button>
+        </div>
+
+        <div class="footer__mid-right">
+          <div class="footer__contact-item">
+            <div class="footer__contact-label">
+              <span>Phone</span>
+              <img src="assets/icons/footer-star-label.svg" alt="" aria-hidden="true">
+            </div>
+            <a class="footer__contact-value" href="tel:+9712424048">971-242-4048</a>
+          </div>
+
+          <div class="footer__contact-item">
+            <div class="footer__contact-label">
+              <span>E-Mail</span>
+              <img src="assets/icons/footer-star-label.svg" alt="" aria-hidden="true">
+            </div>
+            <a class="footer__contact-value" href="mailto:RazuConstruct@gmail.com">RazuConstruct@gmail.com</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__mid-row footer__mid-row--bottom">
+        <div class="footer__copy">
+          <span>© 2026</span>
+          <a class="footer__policy" href="#">Pricacy and Policy</a>
+        </div>
+
+        <div class="footer__socials">
+          <a class="footer__social" href="#">
+            <span>telegram</span>
+            <img src="assets/icons/footer-social.svg" alt="" aria-hidden="true">
+          </a>
+          <a class="footer__social" href="#">
+            <span>whatsapp</span>
+            <img src="assets/icons/footer-social.svg" alt="" aria-hidden="true">
+          </a>
+          <a class="footer__social" href="#">
+            <span>instagram</span>
+            <img src="assets/icons/footer-social.svg" alt="" aria-hidden="true">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer__map" id="footer-map" aria-label="Location map" role="img"></div>
+</footer>
+
+<div class="popup" id="popup" aria-hidden="true" data-lenis-prevent>
+  <div class="popup__window" role="dialog" aria-modal="true" aria-label="Leave a request">
+    <button class="popup__close" type="button" data-popup-close aria-label="Close">
+      <img src="assets/icons/close.svg" alt="" aria-hidden="true">
+    </button>
+
+    <h2 class="popup__title">Fill out a consultation request</h2>
+
+    <form class="popup__form" novalidate>
+      <div class="popup__fields">
+        <input class="popup__input" type="text" name="name" placeholder="Your name" autocomplete="name">
+        <input class="popup__input" type="tel" name="phone" placeholder="Phone number" autocomplete="tel">
+        <input class="popup__input" type="email" name="email" placeholder="E-Mail" autocomplete="email">
+      </div>
+
+      <button class="popup__submit" type="submit">Leave a request</button>
+    </form>
+  </div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/countup.js@2.8.0/dist/countUp.umd.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
