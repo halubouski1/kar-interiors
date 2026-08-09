@@ -288,6 +288,69 @@ if (typeof Swiper !== 'undefined' && document.querySelector('.project__slider'))
 }
 
 // ========================================
+// Mission — animated stat counters (CountUp.js)
+// ========================================
+const missionStats = document.querySelector('.mission__stats');
+const MissionCountUp = (window.countUp && window.countUp.CountUp) || window.CountUp;
+
+if (missionStats && MissionCountUp) {
+  const counters = [];
+
+  missionStats.querySelectorAll('.mission__num').forEach((el) => {
+    const target = parseInt(el.textContent.replace(/\D/g, ''), 10);
+    if (Number.isNaN(target)) return;
+
+    const startVal = el.dataset.start ? parseInt(el.dataset.start, 10) : 0;
+
+    counters.push(new MissionCountUp(el, target, {
+      startVal,
+      duration: 4,
+      separator: ' ', // thin space, e.g. 18 000
+      useEasing: true,
+    }));
+  });
+
+  if (counters.length) {
+    const io = new IntersectionObserver((entries, obs) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        counters.forEach((c) => c.start());
+        obs.disconnect();
+      });
+    }, { threshold: 0.4 });
+
+    io.observe(missionStats);
+  }
+}
+
+// ========================================
+// Advantages — marquee on desktop, paged slider on mobile (<=570px)
+// ========================================
+const advTrack = document.querySelector('.advantages__track');
+if (advTrack) {
+  if (window.matchMedia('(min-width: 570px)').matches) {
+    // Desktop: duplicate cards for a seamless marquee loop
+    [...advTrack.children].forEach((card) => {
+      const clone = card.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      advTrack.appendChild(clone);
+    });
+  } else {
+    // Mobile: one card per screen, cropped 20px each side, arrow nav
+    new Swiper('.advantages__swiper', {
+      slidesPerView: 'auto',
+      spaceBetween: 20,
+      slidesOffsetBefore: 20,
+      slidesOffsetAfter: 20,
+      navigation: {
+        prevEl: '.advantages__arrow--prev',
+        nextEl: '.advantages__arrow--next',
+      },
+    });
+  }
+}
+
+// ========================================
 // FAQ accordion (single-open, whole item clickable)
 // ========================================
 const faqItems = document.querySelectorAll('.faq__item');

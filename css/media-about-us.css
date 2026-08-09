@@ -1,0 +1,334 @@
+@media (max-width: 1919px) {
+    .ab-hero__lead {
+        font-size: 12px;
+        max-width: 300px;
+    }
+
+    .ab-hero__title {
+        font-size: 45px;
+        max-width: 650px;
+    }
+
+    .ab-header__request {
+        min-width: 150px;
+    }
+
+    /* .about */
+    .about-page {
+        padding: 100px 37px 120px;
+    }
+
+    .about-page__title {
+        font-size: 260px;
+        padding-bottom: 65px;
+        margin-bottom: 90px;
+    }
+
+    .about-page__desc p {
+        font-size: 26px;
+    }
+
+    .about-page__desc {
+        max-width: 730px;
+        gap: 50px;
+    }
+
+    /* .mission */
+    .mission__title {
+        font-size: 375px;
+    }
+
+    .mission__body {
+        margin-top: -160px;
+    }
+
+    .mission__desc {
+        margin-top: 85px;
+        max-width: 740px;
+        gap: 50px;
+    }
+
+    .mission__desc p {
+        font-size: 26px;
+    }
+
+    .mission__stats-wrap {
+        margin-top: 200px;
+        padding: 0 40px;
+    }
+
+    .mission__stats-label {
+        font-size: 15px;
+        padding-bottom: 24px;
+        margin-bottom: 37px;
+    }
+
+    .mission__num {
+        font-size: 112px;
+    }
+
+    .mission__stat-caption {
+        font-size: 15px;
+        padding-bottom: 3px;
+    }
+
+    .mission__stat {
+        gap: 22px;
+    }
+
+    .mission {
+        padding-bottom: 180px;
+    }
+
+    /* .advantages */
+    .advantages__card {
+        width: 409px;
+        height: 615px;
+        padding: 31px 26px 37px;
+        margin-right: 2.5px;
+    }
+
+    .advantages__num {
+        font-size: 18px;
+    }
+
+    .advantages__label {
+        font-size: 20px;
+    }
+
+    /* .how */
+    .how--about {
+        padding-top: 230px;
+    }
+
+    .how--about .how__title {
+        font-size: 67px;
+    }
+}
+
+@media (max-width: 1270px) {
+    .mission__title {
+        font-size: 275px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .ab-hero__lead {
+        position: static;
+    }
+
+    .hero--about {
+        gap: 40px;
+    }
+
+    .ab-hero__title {
+        font-size: 35px;
+    }
+
+    /* about */
+    .about-page__title {
+        font-size: 160px;
+    }
+
+    /* mission */
+    .mission__title {
+        font-size: 175px;
+    } 
+
+    .mission__body {
+        margin-top: -100px;
+    }
+
+    .mission__stats {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .mission__desc {
+        padding-left: 30px;
+    }
+
+    .mission__stats-label {
+        text-align: center;
+    }
+}
+
+@media (max-width: 769px) {
+    .hero--about .hero__bottom {
+        flex-direction: column;
+        align-items: start;
+    }
+}
+
+@media (max-width: 570px) {
+    /* hero */
+    .hero--about {
+        padding-top: 90px;
+        justify-content: space-between;
+    }
+
+    .hero--about:after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        height: 500px;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, #00000090 100%);
+    }
+
+    .hero::before {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 38%, rgba(0, 0, 0, 0.0) 100%);
+    }
+
+    .ab-hero__title {
+        font-size: 25px;
+        max-width: 250px;
+        font-weight: 400;
+    }
+
+    .hero--about .hero__bottom {
+        gap: 30px;
+    }
+
+    /* .about */
+    .about-page {
+        padding: 150px 20px 150px;
+    }
+
+    .about-page__title {
+        font-size: 100px;
+        padding-bottom: 50px;
+        margin-bottom: 50px;
+    }
+
+    .about-page__desc p {
+        font-size: 18px;
+    }
+
+    .about-page__desc {
+        gap: 40px;
+    }
+
+    /* .mission */
+    .mission__img {
+        min-height: 547px;
+        object-fit: cover;
+    }
+
+    .mission__title {
+        font-size: 100px;
+        padding-left: 20px;
+    }
+
+    .mission__body {
+        margin-top: -50px;
+    }
+
+    .mission__desc {
+        margin-top: 50px;
+        gap: 40px;
+        margin-right: 20px;
+    }
+
+    .mission__desc p {
+        font-size: 18px;
+    }
+
+    .mission__stats-wrap {
+        margin-top: 150px;
+        padding: 0 20px;
+    }
+
+    .mission__stats-label {
+        font-size: 14px;
+        text-align: left;
+        padding-bottom: 20px;
+        margin-bottom: 40px;
+    }
+
+    .mission__stats {
+        flex-direction: column;
+        align-items: start;
+        gap: 60px;
+    }
+
+    .mission__num {
+        font-size: 80px;
+    }
+
+    .mission__stat-caption {
+        font-size: 16px;
+    }
+
+    .mission__stat {
+        gap: 20px;
+    }
+
+    .mission {
+        padding-bottom: 150px;
+    }
+
+    /* Advantages — paged slider: one card per screen, cropped 20px each side */
+    .advantages__track {
+        width: auto;
+        animation: none;
+    }
+
+    .advantages__card {
+        width: calc(100vw - 40px);
+        height: 580px;
+        margin-right: 0;
+        padding: 20px;
+    }
+
+    .advantages__num {
+        font-size: 16px;
+    }
+
+    .advantages__label {
+        font-size: 21px;
+    }
+
+    .advantages__nav {
+        display: flex;
+        gap: 10px;
+        margin-top: 30px;
+        padding-left: 20px;
+    }
+
+    .advantages__arrow {
+        width: 60px;
+        height: 60px;
+    }
+
+    .advantages__arrow img {
+        width: 16px;
+        height: 16px;
+    }
+
+    .advantages__arrow--prev img {
+        transform: scaleX(-1);
+    }
+
+    .advantages__card::before {
+        display: none;
+    }
+
+    /* .how */
+    .how--about {
+        padding-top: 100px;
+    }
+
+    .how--about .how__title {
+        font-size: 30px;
+        text-align: left;
+    }
+
+    .how--about .how__head {
+        justify-content: start;
+    }
+
+    .how--about .how__list .how__item.how__item:first-child {
+        border-top: 1px solid #2e2e2e;
+    }
+}

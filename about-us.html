@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ren">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+      <link rel="stylesheet" href="css/normalize.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/media.css">
+      <link rel="stylesheet" href="css/about-us.css">
+      <link rel="stylesheet" href="css/media-about-us.css">
+      <script>document.documentElement.style.setProperty("--fixed-vh", window.innerHeight + "px");</script>
+      <title>KAR Interiors</title>
+</head>
+<body>
+
+<header class="header">
+  <button class="header__burger" type="button" aria-label="Open menu">
+    <img src="assets/icons/burger-menu.svg" alt="" aria-hidden="true">
+  </button>
+
+  <nav class="header__nav" aria-label="Primary">
+    <a class="header__link" href="#home">Home</a>
+    <a class="header__link" href="#about">About Us</a>
+    <a class="header__link" href="#services">Services</a>
+    <a class="header__link" href="#projects">Projects</a>
+    <a class="header__link" href="#contact">Contact Us</a>
+  </nav>
+
+  <a class="header__request" href="#" data-popup-open>
+    Leave a request
+    <img src="assets/icons/btn-arrow.svg" alt="" aria-hidden="true">
+  </a>
+</header>
+
+<div class="menu" id="menu" aria-hidden="true" data-lenis-prevent>
+  <button class="menu__close" type="button" aria-label="Close menu">
+    <img src="assets/icons/close.svg" alt="" aria-hidden="true">
+  </button>
+
+  <div class="menu__inner">
+    <div class="menu__left">
+      <img class="menu__logo" src="assets/icons/logo.svg" alt="KAR Interiors">
+
+      <div class="menu__contact">
+        <span class="menu__label">Phone.</span>
+        <a class="menu__contact-link" href="tel:+9712424048">971-242-4048</a>
+      </div>
+
+      <div class="menu__contact">
+        <span class="menu__label">Email.</span>
+        <a class="menu__contact-link" href="mailto:RazuConstruct@gmail.com">RazuConstruct@gmail.com</a>
+      </div>
+
+      <div class="menu__contact menu__contact--socials">
+        <span class="menu__label">Social media.</span>
+        <div class="menu__socials">
+          <a class="menu__contact-link" href="#">telegram</a>
+          <a class="menu__contact-link" href="#">whatsapp</a>
+          <a class="menu__contact-link" href="#">instagram</a>
+        </div>
+      </div>
+    </div>
+
+    <nav class="menu__nav" aria-label="Main">
+      <a class="menu__nav-item" href="#home">
+        <span class="menu__num">01</span>
+        <span class="menu__nav-text">Home</span>
+      </a>
+      <a class="menu__nav-item" href="#about">
+        <span class="menu__num">02</span>
+        <span class="menu__nav-text">About Us</span>
+      </a>
+      <a class="menu__nav-item" href="#services">
+        <span class="menu__num">03</span>
+        <span class="menu__nav-text">Services</span>
+      </a>
+      <a class="menu__nav-item" href="#projects">
+        <span class="menu__num">04</span>
+        <span class="menu__nav-text">Projects</span>
+      </a>
+      <a class="menu__nav-item" href="#contact">
+        <span class="menu__num">05</span>
+        <span class="menu__nav-text">Contact Us</span>
+      </a>
+    </nav>
+  </div>
+</div>
+
+<section class="hero hero--about" id="home">
+  <img class="hero__bg" src="assets/img/about-hero.png" alt="Hero background">
+  <span class="hero__blur" aria-hidden="true">
+  </span>
+
+  <p class="ab-hero__lead">Kar-Interiors is a team of architects and designers that
+    transforms your ideas into interiors with character. We work in Vienna and
+    throughout Europe.</p>
+
+  <div class="hero__bottom">
+      <h1 class="ab-hero__title">WE CREATE SPACES WHERE PEOPLE WANT TO LIVE</h1>
+
+  <a class="header__request ab-header__request" href="#" data-popup-open>
+    Contact Us
+    <img src="assets/icons/btn-arrow.svg" alt="" aria-hidden="true">
+  </a>
+  </div>
+</section>
+
+<section class="about-page" id="about">
+  <h2 class="about-page__title">About</h2>
+
+  <div class="about-page__desc">
+    <p>Kar-Interiors was born from a simple yet ambitious idea: to create interiors that are
+      not only beautiful but also deeply resonate with their owners. We believe that a home is
+      a reflection of one’s personality, not just a collection of trendy styles.</p>
+    <p>Over the years, we’ve come to realize that the best interior is one where every detail
+      matters—where light falls just right, where the layout accommodates every habit, and where
+      the materials are a delight to both the eye and the touch.</p>
+  </div>
+</section>
+
+<section class="mission">
+  <img class="mission__img" src="assets/img/mission.jpg" alt="">
+
+  <div class="mission__body">
+    <h2 class="mission__title">Mission</h2>
+
+    <div class="mission__desc">
+      <p>To make the interior design process simple, transparent, and inspiring. We handle all
+        the complexities—from the architectural concept to the final decor—so that you receive
+        not just a renovated space, but a true home you’ll want to come back to.</p>
+      <p>We’re proud that our clients come back to us again and recommend us to their friends.
+        This is the best reward and the clearest sign that we’re doing our job right.</p>
+    </div>
+
+    <div class="mission__stats-wrap">
+      <span class="mission__stats-label">Experience that speaks for itself</span>
+
+      <div class="mission__stats">
+        <div class="mission__stat">
+          <span class="mission__num">8</span>
+          <span class="mission__stat-caption">years of<br>experience</span>
+        </div>
+        <div class="mission__stat">
+          <span class="mission__num" data-start="10000">18&thinsp;000</span>
+          <span class="mission__stat-caption">m²<br>designed</span>
+        </div>
+        <div class="mission__stat">
+          <span class="mission__num" data-start="100">120</span>
+          <span class="mission__stat-caption">completed<br>projects</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="advantages">
+  <div class="advantages__swiper swiper">
+    <div class="advantages__track swiper-wrapper">
+      <div class="advantages__card swiper-slide" style="background-image: url('assets/img/advantages-card-1.png')">
+        <span class="advantages__num">/01</span>
+        <span class="advantages__label">We listen</span>
+      </div>
+      <div class="advantages__card swiper-slide" style="background-image: url('assets/img/advantages-card-2.png')">
+        <span class="advantages__num">/02</span>
+        <span class="advantages__label">One step ahead</span>
+      </div>
+      <div class="advantages__card swiper-slide" style="background-image: url('assets/img/advantages-card-3.png')">
+        <span class="advantages__num">/03</span>
+        <span class="advantages__label">We are honest with you</span>
+      </div>
+      <div class="advantages__card swiper-slide" style="background-image: url('assets/img/advantages-card-4.png')">
+        <span class="advantages__num">/04</span>
+        <span class="advantages__label">We value your time</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="advantages__nav">
+    <button class="reviews__arrow advantages__arrow advantages__arrow--prev" type="button" aria-label="Previous">
+      <img src="assets/icons/slider-arrow.svg" alt="" aria-hidden="true">
+    </button>
+    <button class="reviews__arrow advantages__arrow advantages__arrow--next" type="button" aria-label="Next">
+      <img src="assets/icons/slider-arrow.svg" alt="" aria-hidden="true">
+    </button>
+  </div>
+</section>
+
+
+<section class="how how--about" id="how">
+  <div class="how__head" data-aos="fade-up">
+    <h2 class="how__title">How do we work</h2>
+  </div>
+
+  <div class="how__list">
+    <a class="how__item" href="#" data-aos="fade-up" data-aos-delay="300">
+      <div class="how__left">
+        <span class="how__num">/01</span>
+        <span class="how__name">Material Selection</span>
+      </div>
+      <p class="how__text">We select finishing materials, furniture, lighting, plumbing fixtures, and decor</p>
+    </a>
+
+    <a class="how__item" href="#" data-aos="fade-up" data-aos-delay="400">
+      <div class="how__left">
+        <span class="how__num">/02</span>
+        <span class="how__name">Implementation</span>
+      </div>
+      <p class="how__text">We oversee construction, communicate with contractors, and verify compliance with the project</p>
+    </a>
+
+    <a class="how__item" href="#" data-aos="fade-up" data-aos-delay="500">
+      <div class="how__left">
+        <span class="how__num">/03</span>
+        <span class="how__name">The Result</span>
+      </div>
+      <p class="how__text">You receive a finished interior that brings you joy every day</p>
+    </a>
+  </div>
+</section>
+
+<div class="how-cursor" aria-hidden="true">
+  <div class="how-cursor__inner">
+    <img src="assets/icons/learn-more.svg" alt="">
+    <span>Learn More</span>
+  </div>
+</div>
+
+<section class="contact" id="contact">
+  <div class="contact__inner">
+    <video class="contact__bg" autoplay muted loop playsinline preload="auto">
+      <source src="assets/vid/contact.mp4" type="video/mp4">
+    </video>
+
+    <div class="contact__top">
+      <a class="contact__logo" href="#home" aria-label="KAR Interiors">
+        <img src="assets/icons/logo.svg" alt="KAR Interiors">
+      </a>
+      <a class="contact__link" href="#contact">Contact Us</a>
+    </div>
+
+    <div class="contact__main">
+      <h2 class="contact__title">Fill out the forms, and we'll contact you for a free consultation</h2>
+
+      <form class="contact__form" novalidate>
+        <div class="contact__fields">
+          <input class="contact__input" type="text" name="name" placeholder="Your name" autocomplete="name">
+          <input class="contact__input" type="tel" name="phone" placeholder="Phone number" autocomplete="tel">
+          <input class="contact__input" type="email" name="email" placeholder="E-Mail" autocomplete="email">
+
+          <div class="contact__select" data-select>
+            <button class="contact__select-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+              <span class="contact__select-value">Property Type</span>
+              <img class="contact__select-chevron" src="assets/icons/dropdown-chevron.svg" alt="" aria-hidden="true">
+            </button>
+            <ul class="contact__select-list" role="listbox">
+              <li class="contact__select-option" role="option" data-value="apartment">Apartment</li>
+              <li class="contact__select-option" role="option" data-value="house">House</li>
+              <li class="contact__select-option" role="option" data-value="office">Office</li>
+              <li class="contact__select-option" role="option" data-value="commercial">Commercial</li>
+            </ul>
+            <input type="hidden" name="propertyType" value="">
+          </div>
+        </div>
+
+        <button class="contact__submit" type="submit">
+          Leave a request
+          <img src="assets/icons/btn-arrow.svg" alt="" aria-hidden="true">
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__content">
+    <div class="footer__top">
+      <nav class="footer__links" aria-label="Footer">
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <button class="footer__totop" type="button" aria-label="Back to top">
+        <img src="assets/icons/to-top-arrow.svg" alt="" aria-hidden="true">
+      </button>
+    </div>
+
+    <div class="footer__mid">
+      <div class="footer__mid-row">
+        <div class="footer__mid-left">
+          <div>
+            <a class="footer__contact-link" href="#contact">
+              <span>Contact Us</span>
+              <img class="footer__arrow" src="assets/icons/footer-contact-arrow.svg" alt="" aria-hidden="true">
+            </a>
+  
+            <div class="footer__dev">
+              <img class="footer__dev-logo" src="assets/icons/dev-logo.svg" alt="" aria-hidden="true">
+              <span class="footer__dev-text">Website<br>Development</span>
+            </div>
+          </div>
+
+      <button class="footer__totop--mobile footer__totop" type="button" aria-label="Back to top">
+        <img src="assets/icons/to-top-arrow.svg" alt="" aria-hidden="true">
+      </button>
+        </div>
+
+        <div class="footer__mid-right">
+          <div class="footer__contact-item">
+            <div class="footer__contact-label">
+              <span>Phone</span>
+              <img src="assets/icons/footer-star-label.svg" alt="" aria-hidden="true">
+            </div>
+            <a class="footer__contact-value" href="tel:+9712424048">971-242-4048</a>
+          </div>
+
+          <div class="footer__contact-item">
+            <div class="footer__contact-label">
+              <span>E-Mail</span>
+              <img src="assets/icons/footer-star-label.svg" alt="" aria-hidden="true">
+            </div>
+            <a class="footer__contact-value" href="mailto:RazuConstruct@gmail.com">RazuConstruct@gmail.com</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__mid-row footer__mid-row--bottom">
+        <div class="footer__copy">
+          <span>© 2026</span>
+          <a class="footer__policy" href="#">Pricacy and Policy</a>
+        </div>
+
+        <div class="footer__socials">
+          <a class="footer__social" href="#">
+            <span>telegram</span>
+            <img src="assets/icons/footer-social.svg" alt="" aria-hidden="true">
+          </a>
+          <a class="footer__social" href="#">
+            <span>whatsapp</span>
+            <img src="assets/icons/footer-social.svg" alt="" aria-hidden="true">
+          </a>
+          <a class="footer__social" href="#">
+            <span>instagram</span>
+            <img src="assets/icons/footer-social.svg" alt="" aria-hidden="true">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer__map" id="footer-map" aria-label="Location map" role="img"></div>
+</footer>
+
+<div class="popup" id="popup" aria-hidden="true" data-lenis-prevent>
+  <div class="popup__window" role="dialog" aria-modal="true" aria-label="Leave a request">
+    <button class="popup__close" type="button" data-popup-close aria-label="Close">
+      <img src="assets/icons/close.svg" alt="" aria-hidden="true">
+    </button>
+
+    <h2 class="popup__title">Fill out a consultation request</h2>
+
+    <form class="popup__form" novalidate>
+      <div class="popup__fields">
+        <input class="popup__input" type="text" name="name" placeholder="Your name" autocomplete="name">
+        <input class="popup__input" type="tel" name="phone" placeholder="Phone number" autocomplete="tel">
+        <input class="popup__input" type="email" name="email" placeholder="E-Mail" autocomplete="email">
+      </div>
+
+      <button class="popup__submit" type="submit">Leave a request</button>
+    </form>
+  </div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/countup.js@2.8.0/dist/countUp.umd.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
