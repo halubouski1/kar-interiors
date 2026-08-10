@@ -21,6 +21,15 @@
         gap: 28px;
     }
 
+    .header__submenu-link {
+        font-size: 12px;
+        gap: 5px;
+    }
+
+    .header__submenu-inner  {
+        min-width: 160px;
+    }
+
     .header__request { 
         border-radius: 3px;
         gap: 20px;
@@ -83,6 +92,18 @@
 
     .menu__nav-text {
         font-size: 56px;
+    }
+
+    .menu__submenu-link {
+        font-size: 20px;
+    }
+
+    .menu__submenu-inner {
+        gap: 14px;
+    }
+
+    .menu__nav-group.is-open .menu__submenu {
+        margin-top: 20px;
     }
 
     /* popup — everything scaled ~0.75 */
@@ -1585,6 +1606,18 @@
 
     .menu__nav-text {
         font-size: 35px;
+    }
+
+    .menu__submenu-link {
+        font-size: 18px;
+    }
+
+    .menu__submenu-inner {
+        gap: 12px;
+    }
+
+    .menu__nav-group.is-open .menu__submenu {
+        margin-top: 16px;
     }
 
     /* popup */

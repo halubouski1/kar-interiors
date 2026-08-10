@@ -638,3 +638,33 @@ if (popup && popupOpeners.length) {
   const popupForm = popup.querySelector('.popup__form');
   if (popupForm) popupForm.addEventListener('submit', (e) => e.preventDefault());
 }
+
+// ========================================
+// Services dropdown — click toggles it (hover also opens it via CSS)
+// ========================================
+const servicesDropdown = document.querySelector('.header__services');
+if (servicesDropdown) {
+  const servicesTrigger = servicesDropdown.querySelector('.header__services-trigger');
+  if (servicesTrigger) {
+    servicesTrigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      servicesDropdown.classList.toggle('is-open');
+    });
+  }
+  // Click anywhere outside closes it
+  document.addEventListener('click', (e) => {
+    if (!servicesDropdown.contains(e.target)) servicesDropdown.classList.remove('is-open');
+  });
+}
+
+// ========================================
+// Mobile menu — Services accordion (click to expand service links)
+// ========================================
+const menuServicesToggle = document.querySelector('.menu__nav-toggle');
+if (menuServicesToggle) {
+  const menuServicesGroup = menuServicesToggle.closest('.menu__nav-group');
+  menuServicesToggle.addEventListener('click', () => {
+    const open = menuServicesGroup.classList.toggle('is-open');
+    menuServicesToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+}

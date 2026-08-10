@@ -22,11 +22,24 @@
   </button>
 
   <nav class="header__nav" aria-label="Primary">
-    <a class="header__link" href="#home">Home</a>
-    <a class="header__link" href="#about">About Us</a>
-    <a class="header__link" href="#services">Services</a>
-    <a class="header__link" href="#projects">Projects</a>
-    <a class="header__link" href="#contact">Contact Us</a>
+    <a class="header__link" href="index.html">Home</a>
+    <a class="header__link" href="about-us.html">About Us</a>
+    <div class="header__services">
+      <button class="header__link header__services-trigger" type="button">
+        Services
+        <img class="header__services-chevron" src="assets/icons/dropdown-chevron.svg" alt="" aria-hidden="true">
+      </button>
+      <div class="header__submenu">
+        <div class="header__submenu-inner">
+          <a class="header__submenu-link" href="service-page.html">Architectural design</a>
+          <a class="header__submenu-link" href="service-page.html">Interior design</a>
+          <a class="header__submenu-link" href="service-page.html">Project supervision</a>
+          <a class="header__submenu-link" href="service-page.html">Furnishing and finishing</a>
+        </div>
+      </div>
+    </div>
+    <a class="header__link" href="portfolio.html">Projects</a>
+    <a class="header__link" href="contact.html">Contact Us</a>
   </nav>
 
   <a class="header__request" href="#" data-popup-open>
@@ -65,23 +78,33 @@
     </div>
 
     <nav class="menu__nav" aria-label="Main">
-      <a class="menu__nav-item" href="#home">
+      <a class="menu__nav-item" href="index.html">
         <span class="menu__num">01</span>
         <span class="menu__nav-text">Home</span>
       </a>
-      <a class="menu__nav-item" href="#about">
+      <a class="menu__nav-item" href="about-us.html">
         <span class="menu__num">02</span>
         <span class="menu__nav-text">About Us</span>
       </a>
-      <a class="menu__nav-item" href="#services">
-        <span class="menu__num">03</span>
-        <span class="menu__nav-text">Services</span>
-      </a>
-      <a class="menu__nav-item" href="#projects">
+      <div class="menu__nav-group">
+        <button class="menu__nav-item menu__nav-toggle" type="button" aria-expanded="false">
+          <span class="menu__num">03</span>
+          <span class="menu__nav-text">Services</span>
+        </button>
+        <div class="menu__submenu">
+          <div class="menu__submenu-inner">
+            <a class="menu__submenu-link" href="service-page.html">Architectural design</a>
+            <a class="menu__submenu-link" href="service-page.html">Interior design</a>
+            <a class="menu__submenu-link" href="service-page.html">Project supervision</a>
+            <a class="menu__submenu-link" href="service-page.html">Furnishing and finishing</a>
+          </div>
+        </div>
+      </div>
+      <a class="menu__nav-item" href="portfolio.html">
         <span class="menu__num">04</span>
         <span class="menu__nav-text">Projects</span>
       </a>
-      <a class="menu__nav-item" href="#contact">
+      <a class="menu__nav-item" href="contact.html">
         <span class="menu__num">05</span>
         <span class="menu__nav-text">Contact Us</span>
       </a>
@@ -109,9 +132,9 @@
 </section>
 
 <section class="about-page" id="about">
-  <h2 class="about-page__title">About</h2>
+  <h2 class="about-page__title"  data-aos="fade-up">About</h2>
 
-  <div class="about-page__desc">
+  <div class="about-page__desc"  data-aos="fade-up">
     <p>Kar-Interiors was born from a simple yet ambitious idea: to create interiors that are
       not only beautiful but also deeply resonate with their owners. We believe that a home is
       a reflection of one’s personality, not just a collection of trendy styles.</p>
@@ -128,9 +151,9 @@
   </picture>
 
   <div class="mission__body">
-    <h2 class="mission__title">Mission</h2>
+    <h2 class="mission__title"  data-aos="fade-up">Mission</h2>
 
-    <div class="mission__desc">
+    <div class="mission__desc"  data-aos="fade-up">
       <p>To make the interior design process simple, transparent, and inspiring. We handle all
         the complexities—from the architectural concept to the final decor—so that you receive
         not just a renovated space, but a true home you’ll want to come back to.</p>
@@ -198,7 +221,7 @@
   </div>
 
   <div class="how__list">
-    <a class="how__item" href="#" data-aos="fade-up" data-aos-delay="300">
+    <a class="how__item" data-popup-open href="#" data-aos="fade-up" data-aos-delay="300">
       <div class="how__left">
         <span class="how__num">/01</span>
         <span class="how__name">Material Selection</span>
@@ -206,7 +229,7 @@
       <p class="how__text">We select finishing materials, furniture, lighting, plumbing fixtures, and decor</p>
     </a>
 
-    <a class="how__item" href="#" data-aos="fade-up" data-aos-delay="400">
+    <a class="how__item" data-popup-open href="#" data-aos="fade-up" data-aos-delay="400">
       <div class="how__left">
         <span class="how__num">/02</span>
         <span class="how__name">Implementation</span>
@@ -214,7 +237,7 @@
       <p class="how__text">We oversee construction, communicate with contractors, and verify compliance with the project</p>
     </a>
 
-    <a class="how__item" href="#" data-aos="fade-up" data-aos-delay="500">
+    <a class="how__item" data-popup-open href="#" data-aos="fade-up" data-aos-delay="500">
       <div class="how__left">
         <span class="how__num">/03</span>
         <span class="how__name">The Result</span>
@@ -281,11 +304,11 @@
   <div class="footer__content">
     <div class="footer__top">
       <nav class="footer__links" aria-label="Footer">
-        <a href="#home">Home</a>
-        <a href="#projects">Projects</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-        <a href="#faq">FAQ</a>
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Projects</a>
+        <a href="about-us.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="index.html#faq">FAQ</a>
       </nav>
       <button class="footer__totop" type="button" aria-label="Back to top">
         <img src="assets/icons/to-top-arrow.svg" alt="" aria-hidden="true">
@@ -296,7 +319,7 @@
       <div class="footer__mid-row">
         <div class="footer__mid-left">
           <div>
-            <a class="footer__contact-link" href="#contact">
+            <a class="footer__contact-link" href="#contact" data-popup-open>
               <span>Contact Us</span>
               <img class="footer__arrow" src="assets/icons/footer-contact-arrow.svg" alt="" aria-hidden="true">
             </a>

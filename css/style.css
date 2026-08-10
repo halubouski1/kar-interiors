@@ -141,6 +141,89 @@ ul {
     opacity: 0.65;
 }
 
+/* Services dropdown (opens on hover) */
+.header__services {
+    position: relative;
+}
+
+.header__services-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0;
+    border: none;
+    background: none;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.header__services-chevron {
+    width: 8px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.header__services:hover .header__services-chevron,
+.header__services.is-open .header__services-chevron {
+    transform: rotate(180deg);
+}
+
+/* Submenu — the top padding is a transparent bridge so the panel stays open
+   while the cursor travels from the trigger to the list */
+.header__submenu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    z-index: 20;
+    padding-top: 14px;
+    transform: translateX(-50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.header__services:hover .header__submenu,
+.header__services.is-open .header__submenu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.header__submenu-inner {
+    display: flex;
+    flex-direction: column;
+    min-width: 220px;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background-color: rgba(28, 21, 15, 0.92);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    transform: translateY(-6px);
+    transition: transform 0.25s ease;
+}
+
+.header__services:hover .header__submenu-inner,
+.header__services.is-open .header__submenu-inner {
+    transform: translateY(0);
+}
+
+.header__submenu-link {
+    padding: 11px 14px;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: rgba(255, 255, 255, 0.75);
+    white-space: nowrap;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.header__submenu-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
 .header__request {
     justify-self: end;
     flex-shrink: 0;
@@ -299,6 +382,61 @@ ul {
     line-height: 100%;
     letter-spacing: -0.03em;
     color: #fff;
+}
+
+/* Services accordion inside the menu */
+.menu__nav-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu__nav-toggle {
+    padding: 0;
+    border: none;
+    background: none;
+    font-family: inherit;
+    text-align: left;
+    align-items: flex-start;
+    cursor: pointer;
+}
+
+/* Animate the real content height via grid rows (0fr → 1fr) so open and close
+   are perfectly smooth and symmetric — unlike max-height, which races ahead of
+   the content and feels abrupt/uneven. */
+.menu__submenu {
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    transition: grid-template-rows 0.5s cubic-bezier(0.76, 0, 0.24, 1),
+                opacity 0.4s ease,
+                margin-top 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.menu__nav-group.is-open .menu__submenu {
+    grid-template-rows: 1fr;
+    margin-top: 26px;
+    opacity: 1;
+}
+
+.menu__submenu-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.menu__submenu-link {
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 110%;
+    letter-spacing: -0.03em;
+    color: #fff;
+    transition: all 0.25s ease;
+}
+
+.menu__submenu-link:hover {
+    opacity: 0.65;
 }
 
 /* ==========================================================================
