@@ -1,0 +1,123 @@
+@media (max-width: 1919px) {
+    /* Contact hero — everything scaled to 0.75.
+       The shared .contact__* form and the footer contact/social classes are
+       already scaled in media.css, so only the hero-specific values live here. */
+    .hero--contact {
+        padding-top: 250px;
+        min-height: 750px;
+    }
+
+    .co-hero__eyebrow {
+        padding-left: 48px;
+        font-size: 16px;
+    }
+
+    .co-hero__title {
+        font-size: 165px;
+        line-height: 90%;
+    }
+
+    /* Form: 466 + 20 + 487  →  350 + 15 + 365 */
+    .co-form {
+        gap: 15px;
+    }
+
+    .co-form__left {
+        width: 350px;
+    }
+
+    .co-form__message {
+        width: 365px;
+        min-height: 135px;
+        padding: 14px 16px;
+        font-size: 13px;
+    }
+
+    /* Contacts (right) */
+    .co-contacts {
+        gap: 98px;
+    }
+}
+
+@media (max-width: 1270px) {
+    .co-contacts {
+        display: none;
+    }
+
+    .co-form__message {
+        width: 265px;
+    }
+}
+
+@media (max-width: 769px) {
+    .co-form__message, .co-form {
+        width: 100%;
+    }
+
+    .co-form__left {
+        width: 50%;
+    }
+
+    .co-hero__title {
+        font-size: 100px;
+    }
+}
+
+@media (max-width: 570px) {
+    .hero--contact {
+        padding-top: 160px;
+        min-height: 0px;
+    }
+
+    .co-hero__eyebrow {
+        padding-left: 0px;
+        font-size: 15px;
+    }
+
+    .co-hero__title {
+        font-size: 76px;
+    }
+
+    /* Form → single column: [name | phone] , email, property, textarea, button.
+       display:contents lifts the fields grid + button into the form flex so the
+       textarea can be ordered between them. */
+    .co-form {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+        width: 100%;
+    }
+
+    .co-form__left {
+        display: contents;
+    }
+
+    .co-form__left .contact__fields {
+        display: grid;
+   grid-template-columns: repeat(2, minmax(0, 1fr));
+        order: 1;
+        width: 100%;
+    }
+
+    .co-form__left .contact__input,  .co-form__left .contact__select-trigger {
+        max-width: 100%;
+    }
+
+    /* email (3rd) and property-type (4th) span the full width; name + phone stay 50/50 */
+    .co-form__left .contact__fields > :nth-child(n + 3) {
+        grid-column: 1 / -1;
+    }
+
+    .co-form__message {
+        order: 2;
+        width: 100%;
+        min-height: 148px;
+    }
+
+    .co-form__left .contact__submit {
+        order: 3;
+        margin-top: 0;
+        max-width: 224px;
+        align-self: flex-start;
+    }
+}

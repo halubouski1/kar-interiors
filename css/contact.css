@@ -1,0 +1,105 @@
+/* ==========================================================================
+   Contact hero
+   ========================================================================== */
+.hero--contact {
+    padding-top: 442px;
+    justify-content: space-between;
+}
+
+/* Intro — eyebrow + big title */
+.co-hero__eyebrow {
+    display: block;
+    padding-left: 64px;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 109%;
+    letter-spacing: -0.03em;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.co-hero__title {
+    margin-top: 2px;
+    font-weight: 300;
+    font-size: 220px;
+    line-height: 100%;
+    letter-spacing: -0.03em;
+    color: #fff;
+}
+
+/* Bottom — form (left) + contacts (right); base .hero__bottom is already
+   flex + space-between + align-end */
+.hero__bottom--contact {
+    align-items: flex-end;
+}
+
+/* ------- Form: fields + button (left) | textarea (right) ------- */
+.co-form {
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+}
+
+.co-form__left {
+    flex-shrink: 0;
+    width: 466px; /* 224 + 18 (col-gap) + 224 */
+}
+
+/* Reuse the contact-section field/dropdown/button styles as-is
+   (.contact__fields, .contact__input, .contact__select, .contact__submit) */
+
+.co-form__message {
+    width: 487px;
+    min-height: 180px;
+    padding: 18px 22px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    background: rgba(255, 255, 255, 0.02);
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.3;
+    letter-spacing: -0.04em;
+    color: #fff;
+    resize: none;
+}
+
+.co-form__message::placeholder {
+    color: #fff;
+}
+
+.co-form__message:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* ------- Contacts (copied from footer, links white) ------- */
+.co-contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 130px;
+}
+
+.co-contacts .footer__contact-value,
+.co-contacts .footer__social {
+    color: #fff;
+}
+
+/* Dropdown opens upward here — the form sits at the bottom of the hero, so an
+   downward list would be clipped by the hero's overflow and covered by the
+   footer. Scoped to the contact hero only. */
+.hero--contact .contact__select-list {
+    top: auto;
+    bottom: calc(100% + 6px);
+    transform: translateY(6px);
+}
+
+.hero--contact .contact__select.is-open .contact__select-list {
+    transform: translateY(0);
+}
+
+/* footer */
+.footer--contact {
+    margin-top: 10px;
+}
