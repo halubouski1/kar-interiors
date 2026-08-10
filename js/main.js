@@ -351,6 +351,34 @@ if (advTrack) {
 }
 
 // ========================================
+// Why choose us — marquee on desktop, paged slider on mobile (<=570px)
+// ========================================
+const whyTrack = document.querySelector('.why__track');
+if (whyTrack) {
+  if (window.matchMedia('(min-width: 571px)').matches) {
+    // Desktop: duplicate cards for a seamless marquee loop
+    [...whyTrack.children].forEach((card) => {
+      const clone = card.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      whyTrack.appendChild(clone);
+    });
+  } else {
+    // Mobile: 290px slides, offset 20 each side, arrow nav, swipeable
+    new Swiper('.why__slider', {
+      slidesPerView: 'auto',
+      spaceBetween: 4,
+      slidesOffsetBefore: 20,
+      slidesOffsetAfter: 20,
+      grabCursor: true,
+      navigation: {
+        prevEl: '.why__arrow--prev',
+        nextEl: '.why__arrow--next',
+      },
+    });
+  }
+}
+
+// ========================================
 // FAQ accordion (single-open, whole item clickable)
 // ========================================
 const faqItems = document.querySelectorAll('.faq__item');

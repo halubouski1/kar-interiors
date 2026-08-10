@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ren">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+      <link rel="stylesheet" href="css/normalize.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/media.css">
+      <link rel="stylesheet" href="css/service.css">
+      <link rel="stylesheet" href="css/media-service.css">
+      <script>document.documentElement.style.setProperty("--fixed-vh", window.innerHeight + "px");</script>
+      <title>KAR Interiors</title>
+</head>
+<body>
+
+<header class="header">
+  <button class="header__burger" type="button" aria-label="Open menu">
+    <img src="assets/icons/burger-menu.svg" alt="" aria-hidden="true">
+  </button>
+
+  <nav class="header__nav" aria-label="Primary">
+    <a class="header__link" href="#home">Home</a>
+    <a class="header__link" href="#about">About Us</a>
+    <a class="header__link" href="#services">Services</a>
+    <a class="header__link" href="#projects">Projects</a>
+    <a class="header__link" href="#contact">Contact Us</a>
+  </nav>
+
+  <a class="header__request" href="#" data-popup-open>
+    Leave a request
+    <img src="assets/icons/btn-arrow.svg" alt="" aria-hidden="true">
+  </a>
+</header>
+
+<div class="menu" id="menu" aria-hidden="true" data-lenis-prevent>
+  <button class="menu__close" type="button" aria-label="Close menu">
+    <img src="assets/icons/close.svg" alt="" aria-hidden="true">
+  </button>
+
+  <div class="menu__inner">
+    <div class="menu__left">
+      <img class="menu__logo" src="assets/icons/logo.svg" alt="KAR Interiors">
+
+      <div class="menu__contact">
+        <span class="menu__label">Phone.</span>
+        <a class="menu__contact-link" href="tel:+9712424048">971-242-4048</a>
+      </div>
+
+      <div class="menu__contact">
+        <span class="menu__label">Email.</span>
+        <a class="menu__contact-link" href="mailto:RazuConstruct@gmail.com">RazuConstruct@gmail.com</a>
+      </div>
+
+      <div class="menu__contact menu__contact--socials">
+        <span class="menu__label">Social media.</span>
+        <div class="menu__socials">
+          <a class="menu__contact-link" href="#">telegram</a>
+          <a class="menu__contact-link" href="#">whatsapp</a>
+          <a class="menu__contact-link" href="#">instagram</a>
+        </div>
+      </div>
+    </div>
+
+    <nav class="menu__nav" aria-label="Main">
+      <a class="menu__nav-item" href="#home">
+        <span class="menu__num">01</span>
+        <span class="menu__nav-text">Home</span>
+      </a>
+      <a class="menu__nav-item" href="#about">
+        <span class="menu__num">02</span>
+        <span class="menu__nav-text">About Us</span>
+      </a>
+      <a class="menu__nav-item" href="#services">
+        <span class="menu__num">03</span>
+        <span class="menu__nav-text">Services</span>
+      </a>
+      <a class="menu__nav-item" href="#projects">
+        <span class="menu__num">04</span>
+        <span class="menu__nav-text">Projects</span>
+      </a>
+      <a class="menu__nav-item" href="#contact">
+        <span class="menu__num">05</span>
+        <span class="menu__nav-text">Contact Us</span>
+      </a>
+    </nav>
+  </div>
+</div>
+
+<section class="hero hero--service" id="home">
+  <span class="hero__blur hero__blur--service" aria-hidden="true"></span>
+  <img class="hero__bg" src="assets/img/service-hero.png" alt="Hero background">
+  <h1 class="hero__title hero__title--service">
+    INTERIOR DESIGN IN VIENNA AND EUROPE
+  </h1>
+  <div class="hero__bottom">
+    <p class="hero__desc--service">
+      A space that reflects your personality and lifestyle. Comprehensive support: from floor planning to the final decor.
+    </p>
+    <div class="hero__buttons">
+      <a class="header__request" href="#" data-popup-open>
+        Leave a request
+        <img src="assets/icons/btn-arrow.svg" alt="" aria-hidden="true">
+      </a>
+      <a class="header__request header__request--secondary" href="#" data-popup-open>
+        Leave a request
+        <img src="assets/icons/btn-arrow.svg" alt="" aria-hidden="true">
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="reasons">
+  <span class="reasons__title">Interior design isn’t just about a pretty picture</span>
+
+  <div class="reasons__subhead">
+    <span class="reasons__subhead-text">People turn to us when</span>
+    <img class="reasons__arrow" src="assets/icons/faq-arrow.svg" alt="" aria-hidden="true">
+  </div>
+
+  <div class="reasons__list">
+    <div class="reasons__item">
+      <span class="reasons__num">01</span>
+      <p class="reasons__desc">You’ve bought an apartment or house—and want to create a unique space, rather than just doing “a renovation like everyone else’s.”</p>
+    </div>
+    <div class="reasons__item">
+      <span class="reasons__num">02</span>
+      <p class="reasons__desc">You need a layout redesign—to make the space as functional as possible for your family.</p>
+    </div>
+    <div class="reasons__item">
+      <span class="reasons__num">03</span>
+      <p class="reasons__desc">You want a timeless interior—modern, stylish, and one that won’t go out of style in a couple of years.</p>
+    </div>
+    <div class="reasons__item">
+      <span class="reasons__num">04</span>
+      <p class="reasons__desc">You don’t have the time or expertise to select materials and furniture on your own or oversee the contractors.</p>
+    </div>
+  </div>
+</section>
+
+<section class="service-image">
+  <picture>
+    <source media="(max-width: 570px)" srcset="assets/img/service-image-mob.jpg">
+    <img class="service-image__img" src="assets/img/service-image.jpg" alt="Interior designed by KAR Interiors">
+  </picture>
+</section>
+
+
+<section class="how how--service" id="how">
+  <div class="how__head" data-aos="fade-up">
+    <h2 class="how__title">What Is Included in an Interior Design Project</h2>
+      <a class="header__request" href="#" data-popup-open>
+        Leave a request
+        <img src="assets/icons/btn-arrow.svg" alt="" aria-hidden="true">
+      </a>
+  </div>
+
+  <div class="how__list">
+    <a class="how__item" href="#" data-aos="fade-up" data-aos-delay="0">
+      <div class="how__left">
+        <span class="how__num">/01</span>
+        <span class="how__name">Briefing</span>
+      </div>
+      <p class="how__text">we discuss your preferences, <br> budget, style, and objectives. We <br> conduct an analysis of the property</p>
+    </a>
+
+    <a class="how__item" href="#" data-aos="fade-up" data-aos-delay="100">
+      <div class="how__left">
+        <span class="how__num">/02</span>
+        <span class="how__name">Concept</span>
+      </div>
+      <p class="how__text">we develop an ergonomic layout and create an interior design concept</p>
+    </a>
+
+    <a class="how__item" href="#" data-aos="fade-up" data-aos-delay="200">
+      <div class="how__left">
+        <span class="how__num">/03</span>
+        <span class="how__name">Design</span>
+      </div>
+      <p class="how__text">we create 3D renderings and prepare working drawings for the builders</p>
+    </a>
+
+    <a class="how__item" href="#" data-aos="fade-up" data-aos-delay="300">
+      <div class="how__left">
+        <span class="how__num">/04</span>
+        <span class="how__name">Material Selection</span>
+      </div>
+      <p class="how__text">We select finishing materials, furniture, lighting, plumbing fixtures, and decor</p>
+    </a>
+
+    <a class="how__item" href="#" data-aos="fade-up" data-aos-delay="400">
+      <div class="how__left">
+        <span class="how__num">/05</span>
+        <span class="how__name">Implementation</span>
+      </div>
+      <p class="how__text">We oversee construction, communicate with contractors, and verify compliance with the project</p>
+    </a>
+
+    <a class="how__item" href="#" data-aos="fade-up" data-aos-delay="500">
+      <div class="how__left">
+        <span class="how__num">/06</span>
+        <span class="how__name">The Result</span>
+      </div>
+      <p class="how__text">You receive a finished interior that brings you joy every day</p>
+    </a>
+  </div>
+</section>
+
+
+
+<div class="how-cursor" aria-hidden="true">
+  <div class="how-cursor__inner">
+    <img src="assets/icons/learn-more.svg" alt="">
+    <span>Learn More</span>
+  </div>
+</div>
+
+<section class="why">
+  <div class="why__head">
+    <h2 class="why__title">Why People Choose Kar-Interiors for Interior Design</h2>
+  </div>
+
+  <div class="why__nav">
+    <button class="reviews__arrow why__arrow why__arrow--prev" type="button" aria-label="Previous">
+      <img src="assets/icons/slider-arrow.svg" alt="" aria-hidden="true">
+    </button>
+    <button class="reviews__arrow why__arrow why__arrow--next" type="button" aria-label="Next">
+      <img src="assets/icons/slider-arrow.svg" alt="" aria-hidden="true">
+    </button>
+  </div>
+
+  <div class="why__slider swiper">
+    <div class="why__track swiper-wrapper">
+      <div class="why__card swiper-slide">
+        <div class="why__media" style="background-image: url('assets/img/why-card-1.jpg')">
+          <span class="why__num">/01</span>
+        </div>
+        <div class="why__card-bottom">
+          <h3 class="why__card-title">A Personalized Approach</h3>
+          <p class="why__card-text">No Templates. Every project is unique and tailored to you</p>
+        </div>
+      </div>
+
+      <div class="why__card swiper-slide">
+        <div class="why__media" style="background-image: url('assets/img/why-card-2.jpg')">
+          <span class="why__num">/02</span>
+        </div>
+        <div class="why__card-bottom">
+          <h3 class="why__card-title">Timeless Interiors</h3>
+          <p class="why__card-text">We don’t chase fleeting trends. Our interiors remain relevant for many years to come</p>
+        </div>
+      </div>
+
+      <div class="why__card swiper-slide">
+        <div class="why__media" style="background-image: url('assets/img/why-card-3.jpg')">
+          <span class="why__num">/03</span>
+        </div>
+        <div class="why__card-bottom">      
+        <h3 class="why__card-title">Transparency</h3>
+        <p class="why__card-text">You know exactly what you’re paying for and when the project will be completed</p>
+        </div> 
+      </div>
+
+      <div class="why__card swiper-slide">
+        <div class="why__media" style="background-image: url('assets/img/why-card-4.jpg')">
+          <span class="why__num">/04</span>
+        </div>
+        <div class="why__card-bottom">
+          <h3 class="why__card-title">Saving You Time</h3>
+          <p class="why__card-text">We handle material selection, communication with suppliers, and construction supervision</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="faq__head" data-aos="fade-up">
+    <h2 class="faq__title">FAQ</h2>
+    <span class="faq__subtitle">Answers to Key Questions About Collaboration</span>
+  </div>
+
+  <div class="faq__list">
+    <div class="faq__item" data-aos="fade-up" data-aos-delay="0">
+      <button class="faq__trigger" type="button" aria-expanded="false">
+        <span class="faq__q">How much does a design project cost?</span>
+        <img class="faq__arrow" src="assets/icons/faq-arrow.svg" alt="" aria-hidden="true">
+      </button>
+      <div class="faq__answer">
+        <div class="faq__answer-inner">
+          <p class="faq__a">The cost depends on the scope, area, and level of finishing. After the first
+            meeting and a brief, we prepare a detailed estimate tailored to your budget.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq__item" data-aos="fade-up" data-aos-delay="100">
+      <button class="faq__trigger" type="button" aria-expanded="false">
+        <span class="faq__q">How long does it take to complete a project?</span>
+        <img class="faq__arrow" src="assets/icons/faq-arrow.svg" alt="" aria-hidden="true">
+      </button>
+      <div class="faq__answer">
+        <div class="faq__answer-inner">
+          <p class="faq__a">On average a full project takes from 6 to 12 months, depending on the size
+            of the space and the complexity of the work.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq__item" data-aos="fade-up" data-aos-delay="200">
+      <button class="faq__trigger" type="button" aria-expanded="false">
+        <span class="faq__q">Do you work with contractors?</span>
+        <img class="faq__arrow" src="assets/icons/faq-arrow.svg" alt="" aria-hidden="true">
+      </button>
+      <div class="faq__answer">
+        <div class="faq__answer-inner">
+          <p class="faq__a">Yes, we have trusted construction crews. However, you can also hire your own
+            contractors —we’ll prepare all the necessary documentation for them and oversee the process.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq__item" data-aos="fade-up" data-aos-delay="300">
+      <button class="faq__trigger" type="button" aria-expanded="false">
+        <span class="faq__q">Can I choose the furniture myself?</span>
+        <img class="faq__arrow" src="assets/icons/faq-arrow.svg" alt="" aria-hidden="true">
+      </button>
+      <div class="faq__answer">
+        <div class="faq__answer-inner">
+          <p class="faq__a">Absolutely. We can select everything for you, or curate the options together —
+            the final choice always stays with you.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq__item" data-aos="fade-up" data-aos-delay="400">
+      <button class="faq__trigger" type="button" aria-expanded="false">
+        <span class="faq__q">What guarantees do you offer?</span>
+        <img class="faq__arrow" src="assets/icons/faq-arrow.svg" alt="" aria-hidden="true">
+      </button>
+      <div class="faq__answer">
+        <div class="faq__answer-inner">
+          <p class="faq__a">We provide a contract with fixed deadlines and budget, author’s supervision at
+            every stage, and a guarantee on all completed work.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq__item" data-aos="fade-up" data-aos-delay="500">
+      <button class="faq__trigger" type="button" aria-expanded="false">
+        <span class="faq__q">Do you work outside of Vienna?</span>
+        <img class="faq__arrow" src="assets/icons/faq-arrow.svg" alt="" aria-hidden="true">
+      </button>
+      <div class="faq__answer">
+        <div class="faq__answer-inner">
+          <p class="faq__a">Yes, we work in Vienna and throughout Europe, handling projects both remotely
+            and on-site wherever needed.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact__inner">
+    <video class="contact__bg" autoplay muted loop playsinline preload="auto">
+      <source src="assets/vid/contact.mp4" type="video/mp4">
+    </video>
+
+    <div class="contact__top">
+      <a class="contact__logo" href="#home" aria-label="KAR Interiors">
+        <img src="assets/icons/logo.svg" alt="KAR Interiors">
+      </a>
+      <a class="contact__link" href="#contact">Contact Us</a>
+    </div>
+
+    <div class="contact__main">
+      <h2 class="contact__title">Fill out the forms, and we'll contact you for a free consultation</h2>
+
+      <form class="contact__form" novalidate>
+        <div class="contact__fields">
+          <input class="contact__input" type="text" name="name" placeholder="Your name" autocomplete="name">
+          <input class="contact__input" type="tel" name="phone" placeholder="Phone number" autocomplete="tel">
+          <input class="contact__input" type="email" name="email" placeholder="E-Mail" autocomplete="email">
+
+          <div class="contact__select" data-select>
+            <button class="contact__select-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+              <span class="contact__select-value">Property Type</span>
+              <img class="contact__select-chevron" src="assets/icons/dropdown-chevron.svg" alt="" aria-hidden="true">
+            </button>
+            <ul class="contact__select-list" role="listbox">
+              <li class="contact__select-option" role="option" data-value="apartment">Apartment</li>
+              <li class="contact__select-option" role="option" data-value="house">House</li>
+              <li class="contact__select-option" role="option" data-value="office">Office</li>
+              <li class="contact__select-option" role="option" data-value="commercial">Commercial</li>
+            </ul>
+            <input type="hidden" name="propertyType" value="">
+          </div>
+        </div>
+
+        <button class="contact__submit" type="submit">
+          Leave a request
+          <img src="assets/icons/btn-arrow.svg" alt="" aria-hidden="true">
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__content">
+    <div class="footer__top">
+      <nav class="footer__links" aria-label="Footer">
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <button class="footer__totop" type="button" aria-label="Back to top">
+        <img src="assets/icons/to-top-arrow.svg" alt="" aria-hidden="true">
+      </button>
+    </div>
+
+    <div class="footer__mid">
+      <div class="footer__mid-row">
+        <div class="footer__mid-left">
+          <div>
+            <a class="footer__contact-link" href="#contact">
+              <span>Contact Us</span>
+              <img class="footer__arrow" src="assets/icons/footer-contact-arrow.svg" alt="" aria-hidden="true">
+            </a>
+  
+            <div class="footer__dev">
+              <img class="footer__dev-logo" src="assets/icons/dev-logo.svg" alt="" aria-hidden="true">
+              <span class="footer__dev-text">Website<br>Development</span>
+            </div>
+          </div>
+
+      <button class="footer__totop--mobile footer__totop" type="button" aria-label="Back to top">
+        <img src="assets/icons/to-top-arrow.svg" alt="" aria-hidden="true">
+      </button>
+        </div>
+
+        <div class="footer__mid-right">
+          <div class="footer__contact-item">
+            <div class="footer__contact-label">
+              <span>Phone</span>
+              <img src="assets/icons/footer-star-label.svg" alt="" aria-hidden="true">
+            </div>
+            <a class="footer__contact-value" href="tel:+9712424048">971-242-4048</a>
+          </div>
+
+          <div class="footer__contact-item">
+            <div class="footer__contact-label">
+              <span>E-Mail</span>
+              <img src="assets/icons/footer-star-label.svg" alt="" aria-hidden="true">
+            </div>
+            <a class="footer__contact-value" href="mailto:RazuConstruct@gmail.com">RazuConstruct@gmail.com</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__mid-row footer__mid-row--bottom">
+        <div class="footer__copy">
+          <span>© 2026</span>
+          <a class="footer__policy" href="#">Pricacy and Policy</a>
+        </div>
+
+        <div class="footer__socials">
+          <a class="footer__social" href="#">
+            <span>telegram</span>
+            <img src="assets/icons/footer-social.svg" alt="" aria-hidden="true">
+          </a>
+          <a class="footer__social" href="#">
+            <span>whatsapp</span>
+            <img src="assets/icons/footer-social.svg" alt="" aria-hidden="true">
+          </a>
+          <a class="footer__social" href="#">
+            <span>instagram</span>
+            <img src="assets/icons/footer-social.svg" alt="" aria-hidden="true">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer__map" id="footer-map" aria-label="Location map" role="img"></div>
+</footer>
+
+<div class="popup" id="popup" aria-hidden="true" data-lenis-prevent>
+  <div class="popup__window" role="dialog" aria-modal="true" aria-label="Leave a request">
+    <button class="popup__close" type="button" data-popup-close aria-label="Close">
+      <img src="assets/icons/close.svg" alt="" aria-hidden="true">
+    </button>
+
+    <h2 class="popup__title">Fill out a consultation request</h2>
+
+    <form class="popup__form" novalidate>
+      <div class="popup__fields">
+        <input class="popup__input" type="text" name="name" placeholder="Your name" autocomplete="name">
+        <input class="popup__input" type="tel" name="phone" placeholder="Phone number" autocomplete="tel">
+        <input class="popup__input" type="email" name="email" placeholder="E-Mail" autocomplete="email">
+      </div>
+
+      <button class="popup__submit" type="submit">Leave a request</button>
+    </form>
+  </div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/countup.js@2.8.0/dist/countUp.umd.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

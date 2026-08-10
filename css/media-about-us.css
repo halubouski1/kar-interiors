@@ -186,6 +186,10 @@
         font-weight: 400;
     }
 
+    .hero--about  .hero__blur {
+        left: 153%;
+    }
+
     .hero--about .hero__bottom {
         gap: 30px;
     }
@@ -294,16 +298,6 @@
         gap: 10px;
         margin-top: 30px;
         padding-left: 20px;
-    }
-
-    .advantages__arrow {
-        width: 60px;
-        height: 60px;
-    }
-
-    .advantages__arrow img {
-        width: 16px;
-        height: 16px;
     }
 
     .advantages__arrow--prev img {

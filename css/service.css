@@ -1,0 +1,325 @@
+.hero__title--service {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 500;
+    font-size: 60px;
+    line-height: 100%;
+    letter-spacing: -0.03em;
+    text-align: center;
+    color: #fff;
+    max-width: 900px;
+    width: 100%;
+}
+
+.hero__blur--service {
+    left: 52%;
+}
+
+.hero__desc--service {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.03em;
+    color: #fff;
+    max-width: 470px;
+}
+
+.hero__buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.header__request--secondary {
+    outline: 1px solid rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    background: rgba(255, 255, 255, 0.02);
+    color: #fff;
+}
+
+.header__request--secondary img {
+    filter: brightness(0) invert(1);
+}
+
+.hero--service .header__request--secondary:hover {
+    background: rgba(255, 255, 255, 0.05);
+    outline: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.hero--service .header__request {
+    min-width: 250px;
+    justify-content: space-between;
+    min-height: 50px;
+}
+
+
+/* ==========================================================================
+   Reasons (why people turn to us)
+   ========================================================================== */
+.reasons {
+    position: relative;
+    padding: 160px 100px 80px 50px;
+    background-color: #000;
+    color: #fff;
+    overflow: hidden;
+}
+
+/* Warm background glow */
+.reasons::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: url("../assets/img/about-us-bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    pointer-events: none;
+}
+
+.reasons > * {
+    position: relative;
+    z-index: 1;
+}
+
+.reasons__title {
+    display: block;
+    font-weight: 300;
+    font-size: 80px;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    background: linear-gradient(96.31deg, #fff 0.11%, #cfbfb4 109.12%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.reasons__subhead {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 130px;
+}
+
+.reasons__subhead-text {
+    font-weight: 300;
+    font-size: 35px;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    background: linear-gradient(96.31deg, rgba(255, 255, 255, 0.6) 2.19%, rgba(207, 191, 180, 0.6) 113.25%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-bottom: 5px;
+}
+
+.reasons__arrow {
+    rotate: 90deg;
+    width: 20px;
+    height: 20px;
+}
+
+.reasons__list {
+    margin-top: 80px;
+}
+
+.reasons__item {
+    display: flex;
+    align-items: center;
+    gap: 660px;
+    padding: 60px 0;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.reasons__num {
+    flex-shrink: 0;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    background: linear-gradient(96.31deg, rgba(255, 255, 255, 0.25) 38.3%, rgba(207, 191, 180, 0.25) 185.08%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.reasons__desc {
+    max-width: 994px;
+    margin-right: 50px;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 173%;
+    letter-spacing: -0.03em;
+    background: linear-gradient(96.31deg, #fff 22.72%, #cfbfb4 154.08%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ==========================================================================
+   Service showcase image (full-bleed)
+   ========================================================================== */
+.service-image {
+    background-color: #000;
+}
+
+.service-image__img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* how */
+.how--service {
+    padding-top: 120px;
+}
+
+.how--service .how__title {
+    font-size: 60px;
+    text-transform: capitalize;
+    line-height: 1.2;
+    background: #fff;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.how--service .how__head {
+    align-items: end;
+}
+
+.how--service .header__request {
+    min-width: 250px;
+    justify-content: space-between;
+    min-height: 50px;
+}
+
+.how--service .how__list .how__item:not(:last-child) {
+    border-bottom: 1px solid #2e2e2e;
+}
+
+/* ==========================================================================
+   Why choose us (auto-scrolling marquee over a warm glow)
+   ========================================================================== */
+.why {
+    position: relative;
+    z-index: 1;
+    padding-bottom: 250px;
+    background-color: #000;
+}
+
+/* Warm glow — lives in a pseudo-element that overshoots the section top and
+   bottom, so it bleeds slightly onto the How (above) and FAQ (below) sections.
+   Transparent PNG edges keep it seamless over the black neighbours. */
+.why::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -600px;
+    height: 2500px;
+    z-index: -1;
+    background-image: url("../assets/img/why-bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    pointer-events: none;
+}
+
+/* Heading — pushed to the right */
+.why__head {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.why__title {
+    max-width: 550px;
+    padding-right: 50px;
+    font-weight: 200;
+    font-size: 60px;
+    line-height: 95%;
+    padding-bottom: 10px;
+    letter-spacing: -0.03em;
+    text-align: right;
+    background: linear-gradient(96.31deg, #fff 6%, #cfbfb4 120.82%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Slider nav — hidden on desktop (marquee), shown on mobile */
+.why__nav {
+    display: none;
+}
+
+/* Marquee */
+.why__slider {
+    margin-top: 100px;
+    overflow: hidden;
+}
+
+.why__track {
+    display: flex;
+    width: max-content;
+    animation: why-marquee 60s linear infinite;
+}
+
+.why__card {
+    flex-shrink: 0;
+    width: 546px;
+    margin-right: 4px;
+}
+
+.why__media {
+    position: relative;
+    width: 546px;
+    height: 820px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.why__num {
+    position: absolute;
+    top: 42px;
+    left: 35px;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 92%;
+    letter-spacing: -0.03em;
+    color: #fff;
+}
+
+.why__card-title {
+    margin-top: 46px;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 92%;
+    letter-spacing: -0.03em;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.why__card-bottom {
+    padding-left: 26px;
+}
+
+.why__card-text {
+    margin-top: 22px;
+    max-width: 360px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.03em;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+@keyframes why-marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
